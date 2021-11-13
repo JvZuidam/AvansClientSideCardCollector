@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from "./components/header/header.component";
-import {FooterComponent} from "./components/footer/footer.component";
+import {DashboardComponent} from "./components/dashboard/dashboard.component";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -11,9 +11,10 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
+        //Add the components belonging to the app module in here so the tests will succeed
         AppComponent,
         HeaderComponent,
-        FooterComponent
+        DashboardComponent
       ],
     }).compileComponents();
   });
