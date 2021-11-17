@@ -3,6 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from "./components/header/header.component";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
+import {UserDetailComponent} from "./components/user/user-detail/user-detail.component";
+import {UserListComponent} from "./components/user/user-list/user-list.component";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
