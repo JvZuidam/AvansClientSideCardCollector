@@ -1,0 +1,97 @@
+<div class="container bg-light">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <form class="form-horizontal" role="form">
+        <fieldset>
+          <h1>New user</h1>
+          <div class="form-group">
+            <label class="col-sm-10 control-label">First name</label>
+            <div class="col-sm-10">
+              <input type="text" name="firstname" placeholder="first name" class="form-control" required minlength="2" [(ngModel)]="user.firstname" #firstname="ngModel">
+              <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="firstname.errors?.['required']">
+                  Your first name is required.
+                </div>
+                <div *ngIf="firstname.errors?.['minlength']">
+                  your first name must be at least 2 characters long.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-10 control-label">Last name</label>
+            <div class="col-sm-10">
+              <input type="text" name="last name" placeholder="Lastname" class="form-control" required minlength="3" [(ngModel)]="user.lastname" #lastname="ngModel">
+              <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="lastname.errors?.['required']">
+                  Your last name is required.
+                </div>
+                <div *ngIf="lastname.errors?.['minlength']">
+                  Your last name must be at least 4 characters long.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" name="userEmail" placeholder="email" class="form-control" required email [(ngModel)]="user.email"  #userEmail="ngModel">
+              <div *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="userEmail.errors?.['required']">
+                  An email is required.
+                </div>
+                <div *ngIf="userEmail.errors?.['email']">
+                  This email is not valid
+                </div>
+              </div>
+            </div>
+            <label class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+              <input type="text" name="username" placeholder="username" class="form-control" required minlength="4" [(ngModel)]="user.username" #username="ngModel">
+              <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="username.errors?.['required']">
+                  Username is required.
+                </div>
+                <div *ngIf="username.errors?.['minlength']">
+                  Your username must be at least 4 characters long.
+                </div>
+              </div>
+            </div>
+            <label class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="text" name="password" placeholder="password" class="form-control" required minlength="4" [(ngModel)]="user.password" #password="ngModel">
+              <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="password.errors?.['required']">
+                  A password is required.
+                </div>
+                <div *ngIf="password.errors?.['minlength']">
+                  Your password must be at least 5 characters long.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10 form-check">
+              <input type="checkbox" name="aggrement" class="form-check-input" [(ngModel)]="checked">
+              <label class="form-check-label">I aggree to Terms & Conditions
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="pull-right">
+                <button [disabled]="!checked" type="submit" class="btn btn-primary" style="margin: 4px;" (click)="onSubmit()">Save</button>
+                <button class="btn btn-default" routerLink="..">cancel</button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
