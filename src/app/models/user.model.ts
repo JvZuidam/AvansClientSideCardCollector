@@ -4,12 +4,13 @@ export class userModel {
   lastname: string = '';
   username: string = '';
   email: string = '';
+  creationDate: Date | undefined;
 
-  constructor(firstname: '', lastname: '', username: '', email: '', ) {
+  constructor(firstname: '', lastname: '', username: '', email: '') {
     this.firstname = firstname;
     this.lastname = lastname;
     this.username = username;
-    this.email = email
+    this.email = email;
   }
 
 }

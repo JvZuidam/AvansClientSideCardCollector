@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../../services/user.service";
 import {userModel} from "../../../models/user.model";
-import {ignoreElements} from "rxjs";
-
 @Component({
   selector: 'app-user-edit',
   templateUrl: './user-edit.component.html',
@@ -27,14 +25,12 @@ export class UserEditComponent implements OnInit {
       if (this.userId) {
         //This user exists
         this.user = this.userService.getUserById(Number(this.userId));
-      } else {
-        //This user does not exist
-        // this.user = new userModel();
+
       }
     })
   }
 
-  save() {
+  onSubmit() {
     console.log("Save called");
     this.router.navigate(['..'], {relativeTo: this.route});
   }

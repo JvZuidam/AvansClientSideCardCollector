@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 .component {
-  border: 2px solid green;
-  padding: 10px;
-  margin: 5px;
+  /*border: 2px solid green;*/
+  /*padding: 10px;*/
+  /*margin: 5px;*/
+}
+
+body {
+  background-image: url("https://thumbs.dreamstime.com/z/large-old-rare-collection-yugioh-card-game-germany-large-old-rare-collection-yugioh-card-game-209410961.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height:100%;
 }

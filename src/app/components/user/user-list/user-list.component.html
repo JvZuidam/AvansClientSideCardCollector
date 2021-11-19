@@ -1,36 +1,29 @@
-<div class="component list">
+<div class="container list bg-light">
   <div class="row">
-    <div class="col-8"><p>List works!</p></div>
     <div class="col">
-      <a
-        class="btn btn-primary btn-sm float-right"
-        href="#"
-        role="button"
-        routerLink="new"
-      >New</a
-      >
+      <a class="btn btn-primary btn-sm float-right" role="button" routerLinkActive="active" routerLink="new">New</a>
     </div>
+    <table class="table table-striped table-hover bg-light">
+      <thead>
+      <th>Id</th>
+      <th>firstname</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Created</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>
+          <a routerLink="{{ user.id }}">
+            {{ user.firstname }} {{ user.lastname }}</a
+          >
+        </td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.creationDate }}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
-
-  <!-- https://getbootstrap.com/docs/5.1/content/tables/ -->
-  <table class="table table-striped table-hover">
-    <thead>
-    <th>Id</th>
-    <th>firstname</th>
-    <th>Email</th>
-    <th>Username</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.id }}</td>
-      <td>
-        <a routerLink="{{ user.id }}">
-          {{ user.firstname }} {{ user.lastname }}</a
-        >
-      </td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.username }}</td>
-    </tr>
-    </tbody>
-  </table>
 </div>

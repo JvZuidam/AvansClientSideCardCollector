@@ -11,35 +11,40 @@ export class UserService {
       firstname: 'Jim',
       lastname: 'van Zuidam',
       username: 'SwiftGale',
-      email: 'jimvanzuidam@hotmail.nl'
+      email: 'jimvanzuidam@hotmail.nl',
+      creationDate: new Date()
     },
     {
       id: 1,
       firstname: 'Henk',
       lastname: 'Grol',
       username: 'GekkeHenkie',
-      email: 'Abc@email.nl'
+      email: 'Abc@email.nl',
+      creationDate: new Date()
     },
     {
       id: 2,
       firstname: 'Japie',
       lastname: 'Jo',
       username: 'JoJoJapie',
-      email: 'Test@company.com'
+      email: 'Test@company.com',
+      creationDate: new Date()
     },
     {
       id: 3,
       firstname: 'Arie',
       lastname: 'Beterband',
       username: 'Arie123',
-      email: 'Bitterbal@email.com'
+      email: 'Bitterbal@email.com',
+      creationDate: new Date()
     },
     {
       id: 4,
       firstname: 'Lisa',
       lastname: 'Den hogen',
       username: 'Lisa321',
-      email: 'Avans@student.nl'
+      email: 'Avans@student.nl',
+      creationDate: new Date()
     },
   ]
 

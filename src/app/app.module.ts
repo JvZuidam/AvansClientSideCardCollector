@@ -15,7 +15,8 @@ import { TradeComponent } from './components/trade/trade.component';
 import { TradeDetailComponent } from './components/trade/trade-detail/trade-detail.component';
 import { TradeEditComponent } from './components/trade/trade-edit/trade-edit.component';
 import { TradeListComponent } from './components/trade/trade-list/trade-list.component';
-import { UserNewComponent } from './components/user/user-new/user-new/user-new.component';
+import { UserNewComponent } from './components/user/user-new/user-new.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { UserNewComponent } from './components/user/user-new/user-new/user-new.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
