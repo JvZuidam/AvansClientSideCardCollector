@@ -1,3 +1,145 @@
-<div class="container bg-black">
-  <p>This is the about page</p>
+<div class="container bg-light">
+  <div class="row">
+    <div>
+      <h1>Casus</h1>
+      <p>De YuGiOh card collector casus gaat over een website waar je een account kan aanmaken om vervolgens YuGiOh kaarten te gaan verzamelen!
+        <br> De hoofdfunctionaliteit van de website is het aanmaken van collecties, waarmee je bij kan houden wat voor kaartje je alemaal hebt.
+        <br> Verder is het ook mogelijk om met de verzamelde kaarten een deck te maken en die bij te houden op de website. <br>
+      Naast dit alles is er ook nog een ruil functionaliteit. Hiermee kan je met andere gebruikers ruilen om zo je collectie vol te krijgen!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <h1>Entiteiten</h1>
+      <p>Binnen de casus worden er een aantal entiteiten gebruikt om functionaliteit en vorm te geven aan de card collector.
+        website</p>
+      <p>De volgende entiteiten worden gebruik in deze casus:</p>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <h2>Users</h2>
+      <p class="text-break">Users zijn nodig om de website te laten werken. Een user kan een account aan maken om vervolgens de functionaliteiten die de website te bieden heeft te gebruiken.</p>
+      <p>Een user bestaat uit de volgende attributen:</p>
+      <ul>
+        <li>Users
+          <ul>
+            <li>Id</li>
+            <li>Firstname</li>
+            <li>Lastname</li>
+            <li>Username</li>
+            <li>Email</li>
+          </ul>
+          <p>Alle attributen zijn hier verplicht voor het aanmaken van een user.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Cards</h2>
+      <p class="text-break">Om een collectie website te kunnen maken zijn er kaarten nodig, deze kaarten zijn statisch ingeladen data vanuit de <a target="_blank" href="https://db.ygoprodeck.com/api-guide/">ygoprodeck api</a></p>
+        <p>Cards bestaan uit de volgende attributen:</p>
+      <ul>
+        <li>Cards
+          <ul>
+            <li>Id</li>
+            <li>Name</li>
+            <li>Type</li>
+            <li>Description</li>
+            <li>Archetype</li>
+            <li>Race</li>
+            <li>Image (Niet een image zelf maar de link naar de image toe die via Ygoprodeck's
+              https://storage.googleapis.com link gaat anders resulteerd het in een ip blacklist
+            </li>
+            <li>CardSetName (De naam van de set waar de kaart uit komt.)</li>
+            <li>CardSetCode (De code die de kaart heeft binnen de set. e.g. BODE-EN030)</li>
+            <li>Attack</li>
+            <li>Defense</li>
+            <li>Level</li>
+            <li>Attribute</li>
+            <li>obtained (Dit attribuut wordt gebruikt om later in een collectie aan te kunnen duiden of je de kaart
+              hebt.)
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <h2>Sets</h2>
+      <p class="text-break">cards behoren tot een uitgebrachte set. Deze sets zijn ook statisch ingeladen data vanuit de <a target="_blank" href="https://db.ygoprodeck.com/api-guide/">ygoprodeck api</a></p>
+      <p>Sets bestaan uit de volgende attributen:</p>
+      <ul>
+        <li>Sets
+          <ul>
+            <li>Id</li>
+            <li>SetName (De naam van de set.)</li>
+            <li>SetCode (De afkorting van de set die op de kaarten gebruikt wordt E.g. Burst Of Destiny -> BODE)</li>
+            <li>NumberOfCards</li>
+            <li>ReleaseDate</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Collections</h2>
+      <p class="text-break">Een collection kan vergeleken worden met een set, Enkel bestaat een set uit wat data over de set zelf en niet over de inhoudelijke kaarten.
+      Een collectie kan je aanmaken, de kaarten die erin zitten aanklikken om te laten zien dat je ze hebt en je kan de kaarten gebruiken om ze in je deck te stoppen.
+        Op een collectie zullen de volledige CRUD functionaliteiten gebruikt worden.</p>
+      <p>Een collection bestaat uit de volgende attributen:
+      <ul>
+        <li>Collections
+          <ul>
+            <li>Id</li>
+            <li>CollectionName</li>
+            <li>CollectionSetName (Dit is een string die overheen zal komen met de namen van de beschikbare sets zodat de kaarten hiervan opgehaald kunnen worden.)</li>
+            <li>CreationDate</li>
+            <li>NumberOfCards</li>
+            <li>Cards (De array van kaarten die in de geselecteerde set zit. Per kaart zelf is te zien of je de kaart al hebt.)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <h2>Decks</h2>
+      <p class="text-break">Een deck is een principe binnen YuGiOh waarin je kaarten samensteld naar jou keuze om vervolgens een match tegen iemand te spelen met een ander deck
+        Een deck bestaat uit een main deck, extra deck en een side deck.</p>
+        <p>Het deck entiteit heeft volgende attributen:</p>
+      <ul>
+        <li>Decks
+          <ul>
+            <li>Id</li>
+            <li>DeckName</li>
+            <li>NumberOfCards</li>
+            <li>MainDeck (Dit is een array van cards die het main deck vormen.)</li>
+            <li>ExtraDeck (Dit is een array van cards die het extra deck vormen.)</li>
+            <li>sideDeck (Dit is een array van cards die het side deck vormen.)</li>
+            <li>CreationDate</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Trades</h2>
+      <p class="text-break">Het is mogelijk om op de card collector website te traden met andere gebruikers. je kan zowel losse kaarten als volledige decks ruilen met elkaar.</p>
+        <p>Een trade bestaat uit de volgende attributen:</p>
+      <ul>
+        <li>Trades
+          <ul>
+            <li>Id</li>
+            <li>Trader (De user die de trade aanmaakt.)</li>
+            <li>Tradee (De user waarmee de geruild wil worden.)</li>
+            <li>CardToTrade (De kaart die de user wilt ruilen.)</li>
+            <li>CardToReceive (De kaart die de user wilt hebben van iemand anders.))</li>
+            <li>DeckToTrade (Het deck dat de user wilt ruilen.)</li>
+            <li>DeckToReceive (Het deck dat de user van iemand anders wilt hebben.)</li>
+            <li>CreationDate</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
+

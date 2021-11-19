@@ -18,16 +18,18 @@
     <th>Id</th>
     <th>firstname</th>
     <th>Email</th>
+    <th>Username</th>
     </thead>
     <tbody>
     <tr *ngFor="let user of users">
       <td>{{ user.id }}</td>
       <td>
-        <a routerLink="/user-detail/{{ user.id }}">
+        <a routerLink="{{ user.id }}">
           {{ user.firstname }} {{ user.lastname }}</a
         >
       </td>
       <td>{{ user.email }}</td>
+      <td>{{ user.username }}</td>
     </tr>
     </tbody>
   </table>
