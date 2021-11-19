@@ -11,8 +11,7 @@
   <div class="row">
     <div>
       <h1>Entiteiten</h1>
-      <p>Binnen de casus worden er een aantal entiteiten gebruikt om functionaliteit en vorm te geven aan de card collector.
-        website</p>
+      <p>Binnen de casus worden er een aantal entiteiten gebruikt om functionaliteit en vorm te geven aan de card collector.</p>
       <p>De volgende entiteiten worden gebruik in deze casus:</p>
     </div>
   </div>
@@ -29,8 +28,13 @@
             <li>Lastname</li>
             <li>Username</li>
             <li>Email</li>
+            <li>password</li>
+            <li>JoiningDate</li>
+            <li>Collections (Een array van collections die de user heeft aangemaakt)</li>
+            <li>Decks (Een array van decks die de user heeft aangemaakt)</li>
+            <li>Trades (Een array van trades die de user heeft aangemaakt)</li>
           </ul>
-          <p>Alle attributen zijn hier verplicht voor het aanmaken van een user.</p>
+          <p>Firstname, Lastname, Email en Password zijn hier verplicht voor het aanmaken van een user.</p>
         </li>
       </ul>
     </div>
@@ -50,7 +54,7 @@
             <li>Image (Niet een image zelf maar de link naar de image toe die via Ygoprodeck's
               https://storage.googleapis.com link gaat anders resulteerd het in een ip blacklist
             </li>
-            <li>CardSetName (De naam van de set waar de kaart uit komt.)</li>
+            <li>CardSetName (De naam van de set waar de kaart uit komt. e.g. Burst Of Destiny)</li>
             <li>CardSetCode (De code die de kaart heeft binnen de set. e.g. BODE-EN030)</li>
             <li>Attack</li>
             <li>Defense</li>
@@ -140,6 +144,10 @@
         </li>
       </ul>
     </div>
+  </div>
+  <div class="row">
+    <h1>Visualisatie verbindingen entiteiten</h1>
+    <img src="assets/images/NoSQL%20database%20design%20example.png" class="img-fluid" alt="Responsive image">
   </div>
 </div>
 

@@ -15,4 +15,13 @@ export class UserListComponent implements OnInit {
     this.users = this.userService.getUsers();
   }
 
+  deleteRow(id: number, username: string){
+    if(confirm("Are you sure to delete user " + username)) {
+      for(let i = 0; i < this.users.length; ++i){
+        if (this.users[i].id === id) {
+          this.users.splice(i,1);
+        }
+      }
+    }
+  }
 }

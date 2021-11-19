@@ -7,7 +7,7 @@ import {userModel} from "../../../models/user.model";
   styleUrls: ['./user-new.component.css']
 })
 export class UserNewComponent implements OnInit {
-  user: userModel = new userModel("","","","");
+  user: userModel = new userModel("","","","", "");
   checked: boolean = false;
 
   constructor() { }

@@ -12,6 +12,7 @@ export class UserService {
       lastname: 'van Zuidam',
       username: 'SwiftGale',
       email: 'jimvanzuidam@hotmail.nl',
+      password: '',
       creationDate: new Date()
     },
     {
@@ -20,6 +21,7 @@ export class UserService {
       lastname: 'Grol',
       username: 'GekkeHenkie',
       email: 'Abc@email.nl',
+      password: '',
       creationDate: new Date()
     },
     {
@@ -28,6 +30,7 @@ export class UserService {
       lastname: 'Jo',
       username: 'JoJoJapie',
       email: 'Test@company.com',
+      password: '',
       creationDate: new Date()
     },
     {
@@ -36,6 +39,7 @@ export class UserService {
       lastname: 'Beterband',
       username: 'Arie123',
       email: 'Bitterbal@email.com',
+      password: '',
       creationDate: new Date()
     },
     {
@@ -44,6 +48,7 @@ export class UserService {
       lastname: 'Den hogen',
       username: 'Lisa321',
       email: 'Avans@student.nl',
+      password: '',
       creationDate: new Date()
     },
   ]
@@ -58,5 +63,10 @@ export class UserService {
   getUserById(id: number): userModel {
     console.log("getUserById aangeroepen");
     return this.users.filter((user) => user.id === id)[0];
+  }
+
+  deleteUserById(Id: number) {
+    console.log("deleteUser aangeroepen");
+    console.log("User is verwijderd");
   }
 }

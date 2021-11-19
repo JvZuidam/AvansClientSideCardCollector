@@ -22,6 +22,7 @@
         <td>{{ user.email }}</td>
         <td>{{ user.username }}</td>
         <td>{{ user.creationDate }}</td>
+        <button class="btn-danger text-black" id="remove" (click)="deleteRow(user.id, user.username)">DELETE USER</button>
       </tr>
       </tbody>
     </table>
