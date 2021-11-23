@@ -2,6 +2,7 @@ import {cardModel} from "./card.model";
 
 export class deckModel {
   id: number = 0;
+  userId: string = '';
   deckName: string = '';
   numberOfCards: number = 0;
   mainDeck: cardModel[];
@@ -10,8 +11,9 @@ export class deckModel {
   creationDate: Date;
 
 
-  constructor(id: number, deckName: string, numberOfCards: number, mainDeck: cardModel[], extraDeck: cardModel[], sideDeck: cardModel[]) {
+  constructor(id: number, userId: string, deckName: string, numberOfCards: number, mainDeck: cardModel[], extraDeck: cardModel[], sideDeck: cardModel[]) {
     this.id = id;
+    this.userId = userId;
     this.deckName = deckName;
     this.numberOfCards = numberOfCards;
     this.mainDeck = mainDeck;

@@ -3,7 +3,7 @@ export class cardModel {
   name: string = '';
   type: string = '';
   desc: string = '';
-  archetype: string = '';
+
   race: string = '';
   image: string = '';
 
@@ -17,14 +17,20 @@ export class cardModel {
   def?: number;
   level?: number;
   attribute?: string;
+  archetype?: string;
+  linkVal?: number;
+  linkMarkers?: string[];
+
+  //Later used in the collection entity to see if the user has the card
   obtained: boolean = false;
 
-  constructor(id: number, name: string, type: string, desc: string, archetype: string, cardSetName: string, cardSetCode: string, image: string) {
+
+  constructor(id: number, name: string, type: string, desc: string, race: string, cardSetName: string, cardSetCode: string, image: string) {
     this.id = id;
     this.name = name;
     this.type = type;
     this.desc = desc;
-    this.archetype = archetype;
+    this.race = race;
     this.cardSetName = cardSetName;
     this.cardSetCode = cardSetCode;
     this.image = image;

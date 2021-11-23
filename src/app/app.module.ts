@@ -17,6 +17,12 @@ import { TradeEditComponent } from './components/trade/trade-edit/trade-edit.com
 import { TradeListComponent } from './components/trade/trade-list/trade-list.component';
 import { UserNewComponent } from './components/user/user-new/user-new.component';
 import {FormsModule} from "@angular/forms";
+import { CollectionComponent } from './components/collection/collection.component';
+import { CollectionListComponent } from './components/collection/collection-list/collection-list.component';
+import { CollectionDetailComponent } from './components/collection/collection-detail/collection-detail.component';
+import { CollectionEditComponent } from './components/collection/collection-edit/collection-edit.component';
+import { CardComponent } from './components/card/card.component';
+import { CardDetailComponent } from './components/card/card-detail/card-detail.component';
 
 
 @NgModule({
@@ -34,7 +40,13 @@ import {FormsModule} from "@angular/forms";
     TradeDetailComponent,
     TradeEditComponent,
     TradeListComponent,
-    UserNewComponent
+    UserNewComponent,
+    CollectionComponent,
+    CollectionListComponent,
+    CollectionDetailComponent,
+    CollectionEditComponent,
+    CardComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import {cardModel} from "./card.model";
 
 export class collectionModel {
   id: number = 0;
+  userId: string = '';
   collectionName: string = '';
   collectionSetName: string = '';
   creationDate: Date;
@@ -10,8 +11,9 @@ export class collectionModel {
   cards: cardModel[];
 
 
-  constructor(id: number, collectionName: string, collectionSetName: string, numberOfCards: number, cards: cardModel[]) {
+  constructor(id: number, userId: string, collectionName: string, collectionSetName: string, numberOfCards: number, cards: cardModel[]) {
     this.id = id;
+    this.userId = userId;
     this.collectionName = collectionName;
     this.collectionSetName = collectionSetName;
     this.creationDate = new Date();
