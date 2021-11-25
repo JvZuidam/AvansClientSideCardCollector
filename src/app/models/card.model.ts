@@ -5,6 +5,7 @@ export class cardModel {
   desc: string = '';
 
   race: string = '';
+  imageSmall: string = '';
   image: string = '';
 
 
@@ -25,7 +26,7 @@ export class cardModel {
   obtained: boolean = false;
 
 
-  constructor(id: number, name: string, type: string, desc: string, race: string, cardSetName: string, cardSetCode: string, image: string) {
+  constructor(id: number, name: string, type: string, desc: string, race: string, cardSetName: string, cardSetCode: string, imageSmall: string, image: string) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -33,6 +34,7 @@ export class cardModel {
     this.race = race;
     this.cardSetName = cardSetName;
     this.cardSetCode = cardSetCode;
+    this.imageSmall = imageSmall;
     this.image = image;
   }
 

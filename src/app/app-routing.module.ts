@@ -11,6 +11,7 @@ import {CollectionListComponent} from "./components/collection/collection-list/c
 import {CollectionDetailComponent} from "./components/collection/collection-detail/collection-detail.component";
 import {CollectionEditComponent} from "./components/collection/collection-edit/collection-edit.component";
 import {CollectionNewComponent} from "./components/collection/collection-new/collection-new.component";
+import {CardDetailComponent} from "./components/card/card-detail/card-detail.component";
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'collections/:id', pathMatch: 'full', component: CollectionDetailComponent},
   { path: 'collections/:id/edit', pathMatch: 'full', component: CollectionEditComponent},
 
+  { path: 'cards/:id', pathMatch: 'full', component: CardDetailComponent}
 ];
 
 
