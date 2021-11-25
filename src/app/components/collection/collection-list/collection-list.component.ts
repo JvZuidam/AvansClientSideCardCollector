@@ -15,4 +15,13 @@ export class CollectionListComponent implements OnInit {
     this.collections = this.collectionService.getCollections();
   }
 
+  deleteRow(id: number, name: string){
+    if(confirm("Are you sure to delete collection: " + name)) {
+      for(let i = 0; i < this.collections.length; ++i){
+        if (this.collections[i].id === id) {
+          this.collections.splice(i,1);
+        }
+      }
+    }
+  }
 }
