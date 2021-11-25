@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {collectionModel} from "../../../models/collection.model";
+import {CollectionService} from "../../../services/collection.service";
 
 @Component({
   selector: 'app-collection-list',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./collection-list.component.css']
 })
 export class CollectionListComponent implements OnInit {
-
-  constructor() { }
+  collections: collectionModel[] = [];
+  constructor(private collectionService: CollectionService) { }
 
   ngOnInit(): void {
+    this.collections = this.collectionService.getCollections();
   }
 
 }

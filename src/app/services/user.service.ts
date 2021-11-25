@@ -65,7 +65,7 @@ export class UserService {
     return this.users.filter((user) => user.id === id)[0];
   }
 
-  deleteUserById(Id: number) {
+  deleteUserById(id: number) {
     console.log("deleteUser aangeroepen");
     console.log("User is verwijderd");
   }

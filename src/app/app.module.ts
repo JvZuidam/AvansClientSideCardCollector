@@ -23,6 +23,7 @@ import { CollectionDetailComponent } from './components/collection/collection-de
 import { CollectionEditComponent } from './components/collection/collection-edit/collection-edit.component';
 import { CardComponent } from './components/card/card.component';
 import { CardDetailComponent } from './components/card/card-detail/card-detail.component';
+import { CollectionNewComponent } from './components/collection/collection-new/collection-new.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { CardDetailComponent } from './components/card/card-detail/card-detail.c
     CollectionDetailComponent,
     CollectionEditComponent,
     CardComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    CollectionNewComponent
   ],
   imports: [
     BrowserModule,
