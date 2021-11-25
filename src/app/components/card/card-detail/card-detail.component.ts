@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {cardModel} from "../../../models/card.model";
+import {CardService} from "../../../services/card.service";
 
 @Component({
   selector: 'app-card-detail',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-detail.component.css']
 })
 export class CardDetailComponent implements OnInit {
-
-  constructor() { }
+  card: cardModel | null = null;
+  constructor(
+    private cardService: CardService,
+    public dialogRef: MatDialogRef<CardDetailComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    console.log("Injected data", data);
+  }
 
   ngOnInit(): void {
+    this.card = this.cardService.getCardById(Number(this.data.id))
   }
 
 }
