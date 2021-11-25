@@ -15,7 +15,7 @@ export class CardService {
       archetype: "Ursarctic",
       cardSetName: "Burst of Destiny",
       cardSetCode: "BODE-EN066",
-      image: "https://storage.googleapis.com/ygoprodeck.com/pics/89771220.jpg",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics_small/89771220.jpg",
       obtained: false
     },
     {
@@ -31,7 +31,7 @@ export class CardService {
       archetype: "Magistus",
       cardSetName: "Burst of Destiny",
       cardSetCode: "BODE-EN045",
-      image: "https://storage.googleapis.com/ygoprodeck.com/pics/95911373.jpg",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics_small/95911373.jpg",
       obtained: false
     },
     {
@@ -46,7 +46,7 @@ export class CardService {
       linkMarkers: ["Bottom-Left", "Bottom-Right"],
       cardSetName: "Burst of Destiny",
       cardSetCode: "BODE-EN083",
-      image: "https://storage.googleapis.com/ygoprodeck.com/pics/82184400.jpg",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics_small/82184400.jpg",
       obtained: false
     },
     {
@@ -62,7 +62,7 @@ export class CardService {
       archetype: "Despia",
       cardSetName: "Burst of Destiny",
       cardSetCode: "BODE-EN011",
-      image: "https://storage.googleapis.com/ygoprodeck.com/pics/81555617.jpg",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics_small/81555617.jpg",
       obtained: false
     },
     {
@@ -73,7 +73,7 @@ export class CardService {
       race: "Normal",
       cardSetName: "Burst of Destiny",
       cardSetCode: "BODE-EN084",
-      image: "https://storage.googleapis.com/ygoprodeck.com/pics/25573115.jpg",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics_small/25573115.jpg",
       obtained: false
     }
   ]

@@ -16,4 +16,24 @@ export class SetService {
   ]
 
   constructor() { }
+
+  getSets(): setModel[] {
+    console.log("getSets aangeroepen");
+    return this.sets;
+  }
+
+  getSetById(id: number): setModel {
+    console.log("getSetById aangeroepen");
+    return this.sets.filter((set) => set.id === id)[0];
+  }
+
+  getSetNames(): String[] {
+    console.log("getSetNames aangeroepen");
+    return this.sets.map(set => set.setName);
+  }
+
+  getCardsInSet(setName: string): number {
+    console.log("getCardsInSet aangeroepen");
+    return this.sets.filter((set) => set.setName == setName)[0].numberOfCards;
+  }
 }

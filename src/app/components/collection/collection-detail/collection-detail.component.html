@@ -1,1 +1,16 @@
-<p>collection-detail works!</p>
+<div class="container detail bg-light">
+  <div class="row">
+    <div class="col-4">
+      <a class="btn btn-primary btn-sm float-right" href="#" role="button" routerLink="edit">Edit</a>
+    </div>
+
+    <h1>{{ collection.collectionName}}</h1>
+    <p>Set: {{ collection.collectionSetName }}</p>
+    <p>Amount: {{ collection.numberOfCards }}</p>
+    <p>Set Created On: {{ collection.creationDate }}</p>
+      <div *ngFor="let a of collection.cards">
+        <img src="{{ a.image }}" alt="">
+      </div>
+  </div>
+</div>
+
