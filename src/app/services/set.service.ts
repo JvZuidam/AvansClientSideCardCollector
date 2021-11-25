@@ -8,10 +8,16 @@ export class SetService {
   sets: setModel[] = [
     {
       id: 50,
-      setName: "Burst of Destiny",
+      setName: "Burst Of Destiny",
       setCode: "BODE",
       numberOfCards: 101,
       releaseDate: new Date("2021-11-04")
+    }, {
+    id: 51,
+      setName: "Dawn Of Majesty",
+      setCode: "DAMA",
+      numberOfCards: 101,
+      releaseDate: new Date("2021-08-12")
     }
   ]
 

@@ -80,7 +80,90 @@ export class CardService {
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/25573115.jpg",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/25573115.jpg",
       obtained: false
+    },
+
+    {
+      id: 98204536,
+      name: "Chronomaly Temple - Trilithon",
+      type: "Spell Card",
+      desc: "If you control no monsters, or all monsters you control are \"Chronomaly\" monsters: You can pay 500 LP; immediately after this effect resolves, Normal Summon 1 \"Chronomaly\" monster from your hand. If a \"Chronomaly\" or \"Number\" Xyz Monster you control would activate an effect by detaching material, you can send this card to the GY instead of 1 of those materials. You can only use each effect of \"Chronomaly Temple - Trilithon\" once per turn.",
+      race: "Continuous",
+      archetype: "Chronomaly",
+      cardSetName: "Dawn of Majesty",
+      cardSetCode: "DAMA-EN059",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics/98204536.jpg",
+      imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/98204536.jpg",
+      obtained: false
+    },
+    {
+      id: 2609443,
+      name: "Chronomaly Vimana",
+      type: "XYZ Monster",
+      desc: "2 Level 5 monsters\r\nOnce per turn (Quick Effect): You can target 1 face-up monster on the field and 1 Xyz Monster or \"Chronomaly\" monster in your GY; that monster on the field gains half the ATK of that monster in the GY (until the end of this turn), then attach that monster from the GY to this card as material. Once per turn, when your opponent activates a monster effect (Quick Effect): You can detach 2 materials from this card; negate the activation.",
+      atk: 2300,
+      def: 2600,
+      level: 5,
+      race: "Machine",
+      attribute: "LIGHT",
+      archetype: "Chronomaly",
+      cardSetName: "Dawn of Majesty",
+      cardSetCode: "DAMA-EN044",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics/2609443.jpg",
+      imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/2609443.jpg",
+      obtained: false
+    },
+    {
+      id: 98234196,
+      name: "Clavkiys, the Magikey Skyblaster",
+      type: "Normal Monster",
+      desc: "''Everyone is full of possibilities. Everything you do, moving forwards, stopping, closing, opening, is all in your hands.\r\nThere are many doors in this world. To open them requires the Magic Key... 2 keys and 1 door... 2 wills and 1 body. Once the doors are opened, the worlds will be connected and the great power revealed.''",
+      atk: 1900,
+      def: 1900,
+      level: 4,
+      race: "Warrior",
+      attribute: "DARK",
+      archetype: "Magikey",
+      cardSetName: "Dawn of Majesty",
+      cardSetCode: "DAMA-EN010",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics/98234196.jpg",
+      imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/98234196.jpg",
+      obtained: false
+    },
+    {
+      id: 291414,
+      name: "Converging Wills Dragon",
+      type: "Tuner Monster",
+      desc: "Cannot be used as Synchro Material, except for the Synchro Summon of a \"Majestic\" monster. This card's name becomes \"Majestic Dragon\" while on the field or in the GY. When you draw this card: You can reveal it; Special Summon it from your hand, then, if you control a Level 8 or higher Dragon Synchro Monster, you can Special Summon 1 Level 1 Dragon monster from your Deck. You can only Special Summon \"Converging Wills Dragon(s)\" once per turn.",
+      atk: 0,
+      def: 0,
+      level: 1,
+      race: "Dragon",
+      attribute: "LIGHT",
+      archetype: "Majestic",
+      cardSetName: "Dawn of Majesty",
+      cardSetCode: "DAMA-EN001",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics/291414.jpg",
+      imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/291414.jpg",
+      obtained: false
+    },
+    {
+      id: 1487805,
+      name: "Cosmic Slicer Zer'oll",
+      type: "Link Monster",
+      desc: "2+ Reptile monsters\r\nMonsters your opponent controls with A-Counters are changed to Defense Position, also neither player can activate their effects. You can only use each of the following effects of \"Cosmic Slicer Zer'oll\" once per turn. If this card is Link Summoned: You can add 1 card from your Deck to your hand that has an effect that places A-Counter(s). You can remove 2 A-Counters from anywhere on the field; immediately after this effect resolves, Normal Summon 1 Reptile monster.",
+      atk: 2600,
+      race: "Reptile",
+      attribute: "LIGHT",
+      archetype: "Alien",
+      linkVal: 3,
+      linkMarkers: ["Bottom-Left","Bottom-Right","Top"],
+      cardSetName: "Dawn of Majesty",
+      cardSetCode: "DAMA-EN047",
+      image: "https://storage.googleapis.com/ygoprodeck.com/pics/1487805.jpg",
+      imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/1487805.jpg",
+      obtained: false
     }
+
   ]
 
   constructor() { }
@@ -90,9 +173,19 @@ export class CardService {
     return this.cards;
   }
 
-  getCardsBySetName(setName: String): cardModel {
+  //TODO: Cards are getting put into the same array and then returned
+  getCardsBySetName(setName: String): cardModel[] {
+    const cardArr = [];
     console.log("getCardsBySetName aangeroepen");
-    return this.cards.filter((card) => card.cardSetName === setName)[0];
+    for (let i = 0; i < this.cards.length; i++) {
+      console.log(this.cards[i]);
+      if (this.cards[i].cardSetName == setName) {
+        console.log("inside");
+        console.log(this.cards[i]);
+        cardArr.push(this.cards[i])
+      }
+    }
+    return cardArr;
   }
 
   getCardById(id: number): cardModel {

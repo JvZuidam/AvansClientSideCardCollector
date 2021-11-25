@@ -26,9 +26,7 @@ export class CollectionDetailComponent implements OnInit, OnDestroy {
     private collectionService: CollectionService,
     private cardService: CardService,
     private matDialog: MatDialog,
-    private router: Router
-  ) {
-  }
+  ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
