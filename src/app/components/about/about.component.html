@@ -60,9 +60,10 @@
             <li>Defense</li>
             <li>Level</li>
             <li>Attribute</li>
-            <li>obtained (Dit attribuut wordt gebruikt om later in een collectie aan te kunnen duiden of je de kaart
+            <li>Obtained (Dit attribuut wordt gebruikt om later in een collectie aan te kunnen duiden of je de kaart
               hebt.)
             </li>
+            <li>TradeAble (Geeft aan of de user de kaart opgeeft om te ruilen)</li>
           </ul>
         </li>
       </ul>
@@ -95,11 +96,13 @@
         <li>Collections
           <ul>
             <li>Id</li>
+            <li>userId</li>
             <li>CollectionName</li>
             <li>CollectionSetName (Dit is een string die overheen zal komen met de namen van de beschikbare sets zodat de kaarten hiervan opgehaald kunnen worden.)</li>
             <li>CreationDate</li>
             <li>NumberOfCards</li>
             <li>Cards (De array van kaarten die in de geselecteerde set zit. Per kaart zelf is te zien of je de kaart al hebt.)</li>
+            <li>Locked (Om aan te geven of een collectie compleet is)</li>
           </ul>
         </li>
       </ul>
@@ -115,6 +118,7 @@
         <li>Decks
           <ul>
             <li>Id</li>
+            <li>UserId</li>
             <li>DeckName</li>
             <li>NumberOfCards</li>
             <li>MainDeck (Dit is een array van cards die het main deck vormen.)</li>
@@ -133,6 +137,7 @@
         <li>Trades
           <ul>
             <li>Id</li>
+            <li>UserId</li>
             <li>Trader (De user die de trade aanmaakt.)</li>
             <li>Tradee (De user waarmee de geruild wil worden.)</li>
             <li>CardToTrade (De kaart die de user wilt ruilen.)</li>
