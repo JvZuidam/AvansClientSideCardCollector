@@ -31,7 +31,7 @@ export class CollectionNewComponent implements OnInit {
   onSubmit(collectionName: string) {
     //Save the collection
     this.collectionService.createNewCollection(
-      new collectionModel(3, '3', collectionName, this.setName, 600, this.cardService.getCardsBySetName(this.setName))
+      new collectionModel(999, '3', collectionName, this.setName, 600, this.cardService.getCardsBySetName(this.setName))
     )
     this.router.navigate(['..'], {relativeTo: this.route});
 
