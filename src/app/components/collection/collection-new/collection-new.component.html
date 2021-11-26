@@ -1,1 +1,32 @@
-<p>collection-new works!</p>
+<div class="container bg-light">
+  <div class="row">
+    <div class="col-md4 col-md-offset-4">
+      <form role="form" class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">collection name</label>
+          <div class="col-sm-10">
+            <input type="text" name="collectionName" placeholder="Collection name" class="form-control" required [(ngModel)]="collection.collectionName"  #collectionName="ngModel">
+            <div *ngIf="collectionName.invalid && (collectionName.dirty || collectionName.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="collectionName.errors?.['required']">
+                A name for your collection is required
+              </div>
+            </div>
+          </div>
+          <label class="col-sm-2 control-label">Choose your set</label>
+          <div class="col-10">
+            <select [(ngModel)]="setName" [ngModelOptions]="{standalone: true}" required #data="ngModel">
+              <option *ngFor="let data of setNames" [ngValue]="data" > {{data}}</option>
+            </select>
+            <div *ngIf="data.invalid && (data.dirty || data.touched)" class="alert alert-danger">
+              <div *ngIf="data.errors?.['required']">
+                A name for your collection is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <button [disabled]="(!collection.collectionName || !setName)" type="submit" class="btn btn-primary" (click)="onSubmit(collection.collectionName)">Create</button>
+      </form>
+    </div>
+  </div>
+</div>

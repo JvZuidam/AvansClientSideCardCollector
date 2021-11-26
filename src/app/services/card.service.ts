@@ -17,7 +17,8 @@ export class CardService {
       cardSetCode: "BODE-EN066",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/89771220.jpg",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/89771220.jpg",
-      obtained: false
+      obtained: true,
+      tradeAble: false
     },
     {
       id: 95911373,
@@ -34,7 +35,8 @@ export class CardService {
       cardSetCode: "BODE-EN045",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/95911373.jpg",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/95911373.jpg",
-      obtained: false
+      obtained: false,
+      tradeAble: false
     },
     {
       id: 82184400,
@@ -50,7 +52,8 @@ export class CardService {
       cardSetCode: "BODE-EN083",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/82184400.jpg",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/82184400.jpg",
-      obtained: false
+      obtained: true,
+      tradeAble: false
     },
     {
       id: 81555617,
@@ -67,7 +70,8 @@ export class CardService {
       cardSetCode: "BODE-EN011",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/81555617.jpg",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/81555617.jpg",
-      obtained: false
+      obtained: false,
+      tradeAble: false
     },
     {
       id: 25573115,
@@ -79,7 +83,8 @@ export class CardService {
       cardSetCode: "BODE-EN084",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/25573115.jpg",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/25573115.jpg",
-      obtained: false
+      obtained: true,
+      tradeAble: false
     },
 
     {
@@ -93,7 +98,8 @@ export class CardService {
       cardSetCode: "DAMA-EN059",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/98204536.jpg",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/98204536.jpg",
-      obtained: false
+      obtained: false,
+      tradeAble: false
     },
     {
       id: 2609443,
@@ -110,7 +116,8 @@ export class CardService {
       cardSetCode: "DAMA-EN044",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/2609443.jpg",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/2609443.jpg",
-      obtained: false
+      obtained: true,
+      tradeAble: false
     },
     {
       id: 98234196,
@@ -127,7 +134,8 @@ export class CardService {
       cardSetCode: "DAMA-EN010",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/98234196.jpg",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/98234196.jpg",
-      obtained: false
+      obtained: false,
+      tradeAble: false
     },
     {
       id: 291414,
@@ -144,7 +152,8 @@ export class CardService {
       cardSetCode: "DAMA-EN001",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/291414.jpg",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/291414.jpg",
-      obtained: false
+      obtained: true,
+      tradeAble: false
     },
     {
       id: 1487805,
@@ -161,7 +170,8 @@ export class CardService {
       cardSetCode: "DAMA-EN047",
       image: "https://storage.googleapis.com/ygoprodeck.com/pics/1487805.jpg",
       imageSmall: "https://storage.googleapis.com/ygoprodeck.com/pics_small/1487805.jpg",
-      obtained: false
+      obtained: false,
+      tradeAble: false
     }
 
   ]
@@ -178,10 +188,7 @@ export class CardService {
     const cardArr = [];
     console.log("getCardsBySetName aangeroepen");
     for (let i = 0; i < this.cards.length; i++) {
-      console.log(this.cards[i]);
       if (this.cards[i].cardSetName == setName) {
-        console.log("inside");
-        console.log(this.cards[i]);
         cardArr.push(this.cards[i])
       }
     }

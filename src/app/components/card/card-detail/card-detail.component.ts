@@ -14,9 +14,7 @@ export class CardDetailComponent implements OnInit {
     private cardService: CardService,
     public dialogRef: MatDialogRef<CardDetailComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
-    console.log("Injected data", data);
-  }
+  ) {  }
 
   ngOnInit(): void {
     this.card = this.cardService.getCardById(Number(this.data.id))

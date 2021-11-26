@@ -1,0 +1,12 @@
+#myImage {
+  opacity: 0.8;
+  filter: alpha(opacity=40); /* msie */
+}
+
+/* or */
+
+#wrapper {
+  opacity: 0.8;
+  filter: alpha(opacity=40); /* msie */
+  background-color: #000;
+}

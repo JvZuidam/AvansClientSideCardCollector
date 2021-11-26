@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CollectionNewComponent } from './collection-new.component';
+import {RouterTestingModule} from "@angular/router/testing";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {FormsModule} from "@angular/forms";
 
 describe('CollectionNewComponent', () => {
   let component: CollectionNewComponent;
@@ -8,7 +11,8 @@ describe('CollectionNewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CollectionNewComponent ]
+      declarations: [ CollectionNewComponent ],
+      imports: [RouterTestingModule, HttpClientTestingModule, FormsModule]
     })
     .compileComponents();
   });
