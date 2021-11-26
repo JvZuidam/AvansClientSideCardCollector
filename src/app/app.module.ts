@@ -25,8 +25,8 @@ import { CardComponent } from './components/card/card.component';
 import { CardDetailComponent } from './components/card/card-detail/card-detail.component';
 import { CollectionNewComponent } from './components/collection/collection-new/collection-new.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
-import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/testing";
+import { MatDialogModule} from "@angular/material/dialog";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -54,11 +54,12 @@ import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/tes
     CollectionNewComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

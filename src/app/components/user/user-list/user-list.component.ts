@@ -9,6 +9,7 @@ import { UserService} from "../../../services/user.service";
 })
 export class UserListComponent implements OnInit {
   users: userModel[] = [];
+  static users: userModel[] = [];
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
