@@ -1,3 +1,7 @@
+import {collectionModel} from "./collection.model";
+import {tradeModel} from "./trade.model";
+import {deckModel} from "./deck.model";
+
 export class userModel {
   id: number = 0;
   firstname: string = '';
@@ -6,6 +10,9 @@ export class userModel {
   email: string = '';
   password: string = '';
   creationDate: Date | undefined;
+  collections: collectionModel[] | null = null;
+  trades: tradeModel[] | null = null;
+  decks: deckModel[] | null = null;
 
   constructor(firstname: '', lastname: '', username: '', email: '', password: '') {
     this.firstname = firstname;
