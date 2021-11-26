@@ -8,13 +8,13 @@ export class SetService {
   sets: setModel[] = [
     {
       id: 50,
-      setName: "Burst Of Destiny",
+      setName: "Burst of Destiny",
       setCode: "BODE",
       numberOfCards: 101,
       releaseDate: new Date("2021-11-04")
     }, {
     id: 51,
-      setName: "Dawn Of Majesty",
+      setName: "Dawn of Majesty",
       setCode: "DAMA",
       numberOfCards: 101,
       releaseDate: new Date("2021-08-12")
@@ -33,7 +33,7 @@ export class SetService {
     return this.sets.filter((set) => set.id === id)[0];
   }
 
-  getSetNames(): String[] {
+  getSetNames(): string[] {
     console.log("getSetNames aangeroepen");
     return this.sets.map(set => set.setName);
   }

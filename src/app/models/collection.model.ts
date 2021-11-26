@@ -9,6 +9,7 @@ export class collectionModel {
   creationDate: Date;
   numberOfCards: number = 0;
   cards: cardModel[];
+  locked: boolean = false;
 
 
   constructor(id: number, userId: string, collectionName: string, collectionSetName: string, numberOfCards: number, cards: cardModel[]) {
@@ -18,6 +19,6 @@ export class collectionModel {
     this.collectionSetName = collectionSetName;
     this.creationDate = new Date();
     this.numberOfCards = numberOfCards;
-    this.cards = cards
+    this.cards = cards;
   }
 }

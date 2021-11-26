@@ -24,6 +24,7 @@ export class cardModel {
 
   //Later used in the collection entity to see if the user has the card
   obtained: boolean = false;
+  tradeAble: boolean = false;
 
 
   constructor(id: number, name: string, type: string, desc: string, race: string, cardSetName: string, cardSetCode: string, imageSmall: string, image: string) {

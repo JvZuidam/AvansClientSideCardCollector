@@ -8,9 +8,9 @@
     <p>Set: {{ collection.collectionSetName }}</p>
     <p>Amount: {{ collection.numberOfCards }}</p>
     <p>Set Created On: {{ collection.creationDate }}</p>
-      <div class="col-1" *ngFor="let a of collection.cards">
-        <a  (click)="openCardDetail(a.id)"><img src="{{ a.imageSmall }}" alt=""></a>
-
+      <div class="col-2" *ngFor="let a of collection.cards">
+        <a *ngIf="a.obtained" (click)="openCardDetail(a.id)"><img src="{{ a.imageSmall }}" alt=""></a>
+        <a id="wrapper" *ngIf="!a.obtained" (click)="openCardDetail(a.id)"><img id="myImage" src="{{ a.imageSmall }}" alt=""></a>
       </div>
   </div>
 

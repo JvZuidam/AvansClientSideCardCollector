@@ -17,7 +17,8 @@ export class CollectionService {
       creationDate: new Date(),
       numberOfCards: 50,
       //TODO: Eventually change this to contain the cards in the actual database
-      cards: this.cardService.getCardsBySetName("Burst of Destiny")
+      cards: this.cardService.getCardsBySetName("Burst of Destiny"),
+      locked: false
     },
     {
       id: 1,
@@ -26,7 +27,8 @@ export class CollectionService {
       collectionSetName: "Dawn Of Majesty",
       creationDate: new Date(),
       numberOfCards: 51,
-      cards: this.cardService.getCardsBySetName("Dawn of Majesty")
+      cards: this.cardService.getCardsBySetName("Dawn of Majesty"),
+      locked: false
     }]
   constructor(
     private cardService: CardService,
@@ -47,5 +49,11 @@ export class CollectionService {
   getCollectionById(id: number): collectionModel {
     console.log("getCollectionById aangeroepen");
     return this.collections.filter((collection) => collection.id === id)[0]
+  }
+
+  createNewCollection(collection: collectionModel) {
+    console.log("createNewCollection aangeroepen");
+    console.log(collection);
+    this.collections.push(collection)
   }
 }
