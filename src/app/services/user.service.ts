@@ -13,7 +13,7 @@ export class UserService {
       username: 'SwiftGale',
       email: 'jimvanzuidam@hotmail.nl',
       password: '',
-      creationDate: new Date(),
+      creationDate: new Date("2021-11-12"),
       collections: [],
       trades: [],
       decks: []
@@ -25,7 +25,7 @@ export class UserService {
       username: 'GekkeHenkie',
       email: 'Abc@email.nl',
       password: '',
-      creationDate: new Date(),
+      creationDate: new Date("2021-11-12"),
       collections: [],
       trades: [],
       decks: []
@@ -37,7 +37,7 @@ export class UserService {
       username: 'JoJoJapie',
       email: 'Test@company.com',
       password: '',
-      creationDate: new Date(),
+      creationDate: new Date("2021-11-12"),
       collections: [],
       trades: [],
       decks: []
@@ -49,7 +49,7 @@ export class UserService {
       username: 'Arie123',
       email: 'Bitterbal@email.com',
       password: '',
-      creationDate: new Date(),
+      creationDate: new Date("2021-11-12"),
       collections: [],
       trades: [],
       decks: []
@@ -61,7 +61,7 @@ export class UserService {
       username: 'Lisa321',
       email: 'Avans@student.nl',
       password: '',
-      creationDate: new Date(),
+      creationDate: new Date("2021-11-12"),
       collections: [],
       trades: [],
       decks: []
