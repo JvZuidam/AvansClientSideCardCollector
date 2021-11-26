@@ -4,6 +4,7 @@ import {deckModel} from "./deck.model";
 
 export class tradeModel {
   id: number = 0;
+  userId: string = ''
   trader: userModel;
   tradee: userModel;
   cardToTrade?: cardModel;
@@ -13,8 +14,9 @@ export class tradeModel {
   creationDate: Date;
 
 
-  constructor(id: number, trader: userModel, tradee: userModel, cardToTrade: cardModel, cardToReceive: cardModel, deckToTrade: deckModel, deckToReceive: deckModel) {
+  constructor(id: number, userId: string, trader: userModel, tradee: userModel, cardToTrade: cardModel, cardToReceive: cardModel, deckToTrade: deckModel, deckToReceive: deckModel) {
     this.id = id;
+    this.userId = userId;
     this.trader = trader;
     this.tradee = tradee;
     this.cardToTrade = cardToTrade;

@@ -1,0 +1,28 @@
+<div *ngIf="card" class="container" style="  height: 800px;
+    overflow: scroll; /* Or scroll, depending on your needs*/
+    width: 1000px;">
+
+<!--TODO: Somehwere here testing goed wrong it can't detect name because its undefined or something-->
+  <h1>{{ card.name }}</h1>
+  <img src="{{ card.image }}" alt="Image is currently not available">
+  <p>Description: {{ card.desc }}</p>
+  <p>Set: {{ card.cardSetName }}</p>
+  <p>SetCode: {{ card.cardSetCode }}</p>
+
+
+  <p *ngIf="card.level">Level: {{ card.level }}</p>
+  <p *ngIf="card.attribute">Attribute: {{ card.attribute }}</p>
+  <p *ngIf="card.linkVal">Link: {{ card.linkVal }}</p>
+  <p *ngIf="card.linkMarkers">LinkMarkers: {{ card.linkMarkers }}</p>
+  <p *ngIf="card.atk">Attack: {{ card.atk }}</p>
+  <p *ngIf="card.def">Defense: {{ card.def }}</p>
+
+  <p>Race: {{ card.race }}</p>
+  <p *ngIf="card.archetype">Archetype: {{ card.archetype }}</p>
+
+  <p>Obtained: {{ card.obtained }}</p>
+
+
+</div>
+
+

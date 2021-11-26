@@ -27,11 +27,11 @@ export class UserEditComponent implements OnInit {
         this.user = this.userService.getUserById(Number(this.userId));
 
       }
-    })
+    });
   }
 
   onSubmit() {
-    console.log("Save called");
+    console.log("User bewerking opslaan aangeroepen");
     this.router.navigate(['..'], {relativeTo: this.route});
   }
 }

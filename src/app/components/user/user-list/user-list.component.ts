@@ -9,6 +9,7 @@ import { UserService} from "../../../services/user.service";
 })
 export class UserListComponent implements OnInit {
   users: userModel[] = [];
+  static users: userModel[] = [];
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -16,7 +17,7 @@ export class UserListComponent implements OnInit {
   }
 
   deleteRow(id: number, username: string){
-    if(confirm("Are you sure to delete user " + username)) {
+    if(confirm("Are you sure to delete user: " + username)) {
       for(let i = 0; i < this.users.length; ++i){
         if (this.users[i].id === id) {
           this.users.splice(i,1);
