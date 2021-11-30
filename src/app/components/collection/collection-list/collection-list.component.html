@@ -15,9 +15,8 @@
       <tbody>
       <tr *ngFor="let collection of collections">
         <td>
-          <a routerLink="{{ collection.id }}">
-            {{ collection.id }}</a
-          >
+          <!--TODO: This routerlink is giving off anti attribute errors during tests, find a fix-->
+          <a routerLink="{{ collection.id }}">{{ collection.id }}</a>
         </td>
         <td>{{ collection.collectionName }}</td>
         <td>{{ collection.collectionSetName }}</td>
