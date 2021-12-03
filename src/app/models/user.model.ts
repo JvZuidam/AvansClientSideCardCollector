@@ -14,7 +14,7 @@ export class userModel {
   trades: tradeModel[] | null = null;
   decks: deckModel[] | null = null;
 
-  constructor(firstname: '', lastname: '', username: '', email: '', password: '') {
+  constructor(firstname: string, lastname: string, username: string, email: string, password: string) {
     this.firstname = firstname;
     this.lastname = lastname;
     this.username = username;

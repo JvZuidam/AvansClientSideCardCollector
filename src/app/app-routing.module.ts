@@ -12,6 +12,10 @@ import {CollectionDetailComponent} from "./components/collection/collection-deta
 import {CollectionEditComponent} from "./components/collection/collection-edit/collection-edit.component";
 import {CollectionNewComponent} from "./components/collection/collection-new/collection-new.component";
 import {CardDetailComponent} from "./components/card/card-detail/card-detail.component";
+import {DeckListComponent} from "./components/deck/deck-list/deck-list.component";
+import {DeckNewComponent} from "./components/deck/deck-new/deck-new.component";
+import {DeckDetailComponent} from "./components/deck/deck-detail/deck-detail.component";
+import {DeckEditComponent} from "./components/deck/deck-edit/deck-edit.component";
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -29,7 +33,13 @@ const routes: Routes = [
   { path: 'collections/:id', pathMatch: 'full', component: CollectionDetailComponent},
   { path: 'collections/:id/edit', pathMatch: 'full', component: CollectionEditComponent},
 
-  { path: 'cards/:id', pathMatch: 'full', component: CardDetailComponent}
+  { path: 'cards/:id', pathMatch: 'full', component: CardDetailComponent},
+
+  { path: 'decks', pathMatch: 'full', component: DeckListComponent},
+  { path: 'decks/new', pathMatch: 'full', component: DeckNewComponent},
+  { path: 'decks/:id', pathMatch: 'full', component: DeckDetailComponent},
+  { path: 'decks/:id/edit', pathMatch: 'full', component: DeckEditComponent},
+
 ];
 
 
