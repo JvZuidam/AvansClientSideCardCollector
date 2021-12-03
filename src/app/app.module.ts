@@ -27,6 +27,11 @@ import { CollectionNewComponent } from './components/collection/collection-new/c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule} from "@angular/material/dialog";
 import {RouterModule} from "@angular/router";
+import { DeckComponent } from './components/deck/deck.component';
+import { DeckListComponent } from './components/deck/deck-list/deck-list.component';
+import { DeckDetailComponent } from './components/deck/deck-detail/deck-detail.component';
+import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.component';
+import { DeckNewComponent } from './components/deck/deck-new/deck-new.component';
 
 
 @NgModule({
@@ -51,7 +56,12 @@ import {RouterModule} from "@angular/router";
     CollectionEditComponent,
     CardComponent,
     CardDetailComponent,
-    CollectionNewComponent
+    CollectionNewComponent,
+    DeckComponent,
+    DeckListComponent,
+    DeckDetailComponent,
+    DeckEditComponent,
+    DeckNewComponent
   ],
   imports: [
     AppRoutingModule,
