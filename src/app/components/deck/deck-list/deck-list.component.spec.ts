@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DeckListComponent } from './deck-list.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('DeckListComponent', () => {
   let component: DeckListComponent;
@@ -8,7 +9,8 @@ describe('DeckListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeckListComponent ]
+      declarations: [ DeckListComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });

@@ -12,7 +12,7 @@ describe('CardDetailComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ CardDetailComponent ],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, HttpClientTestingModule],
       providers: [
         {
           provide: MatDialogRef,

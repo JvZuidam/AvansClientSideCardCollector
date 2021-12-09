@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TradeListComponent } from './trade-list.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('TradeListComponent', () => {
   let component: TradeListComponent;
@@ -8,7 +9,8 @@ describe('TradeListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TradeListComponent ]
+      declarations: [ TradeListComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });

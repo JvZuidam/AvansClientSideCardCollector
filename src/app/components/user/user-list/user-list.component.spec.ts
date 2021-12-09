@@ -5,6 +5,7 @@ import {UserService} from "../../../services/user.service";
 import {FormsModule} from "@angular/forms";
 import {of} from "rxjs";
 import {userModel} from "../../../models/user.model";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -12,7 +13,8 @@ describe('UserListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserListComponent ]
+      declarations: [ UserListComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });

@@ -33,6 +33,7 @@ import { DeckDetailComponent } from './components/deck/deck-detail/deck-detail.c
 import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.component';
 import { DeckNewComponent } from './components/deck/deck-new/deck-new.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { TradeNewComponent } from './components/trade/trade-new/trade-new.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     DeckListComponent,
     DeckDetailComponent,
     DeckEditComponent,
-    DeckNewComponent
+    DeckNewComponent,
+    TradeNewComponent
   ],
   imports: [
     AppRoutingModule,
