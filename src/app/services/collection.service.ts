@@ -3,6 +3,7 @@ import {collectionModel} from "../models/collection.model";
 import {CardService} from "./card.service";
 import {SetService} from "./set.service";
 import {cardModel} from "../models/card.model";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +63,7 @@ export class CollectionService {
     }]
   constructor(
     private cardService: CardService,
+    private http: HttpClient,
   ) { }
 
 
@@ -83,7 +85,6 @@ export class CollectionService {
 
   createNewCollection(collection: collectionModel) {
     console.log("createNewCollection aangeroepen");
-    console.log(collection);
     this.collections.push(collection)
   }
 }

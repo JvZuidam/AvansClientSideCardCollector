@@ -32,6 +32,7 @@ import { DeckListComponent } from './components/deck/deck-list/deck-list.compone
 import { DeckDetailComponent } from './components/deck/deck-detail/deck-detail.component';
 import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.component';
 import { DeckNewComponent } from './components/deck/deck-new/deck-new.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { DeckNewComponent } from './components/deck/deck-new/deck-new.component'
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

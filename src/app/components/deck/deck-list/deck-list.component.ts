@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DeckService} from "../../../services/deck.service";
 
 @Component({
   selector: 'app-deck-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeckListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private deckService: DeckService
+  ) { }
 
   ngOnInit(): void {
+  this.deckService.getDecks()
   }
 
 }

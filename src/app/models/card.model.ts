@@ -38,7 +38,4 @@ export class cardModel {
     this.imageSmall = imageSmall;
     this.image = image;
   }
-
-
-
 }
