@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TradeEditComponent } from './trade-edit.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('TradeEditComponent', () => {
   let component: TradeEditComponent;
@@ -8,7 +9,8 @@ describe('TradeEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TradeEditComponent ]
+      declarations: [ TradeEditComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });

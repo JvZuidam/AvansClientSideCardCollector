@@ -15,16 +15,15 @@
       <tbody>
       <tr *ngFor="let collection of collections">
         <td>
-          <a routerLink="{{ collection.id }}">
-            {{ collection.id }}</a
-          >
+          <!--TODO: This routerlink is giving off anti attribute errors during tests, find a fix-->
+          <a routerLink="{{ collection._id }}">{{ collection._id }}</a>
         </td>
         <td>{{ collection.collectionName }}</td>
         <td>{{ collection.collectionSetName }}</td>
         <td>{{ collection.numberOfCards }}</td>
         <td>{{ collection.creationDate }}</td>
         <td>{{ collection.locked }}</td>
-        <button class="btn-danger text-black" id="remove" (click)="deleteRow(collection.id, collection.collectionName)">DELETE COLLECTION</button>
+        <button class="btn-danger text-black" id="remove" (click)="deleteRow(collection._id, collection.collectionName)">DELETE COLLECTION</button>
       </tr>
       </tbody>
     </table>

@@ -84,4 +84,9 @@ export class UserService {
     console.log("deleteUser aangeroepen");
     console.log("User is verwijderd");
   }
+
+  createNewUser(user: userModel) {
+    console.log("createNewUser aangeroepen");
+    this.users.push(user);
+  }
 }

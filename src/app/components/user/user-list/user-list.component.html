@@ -15,9 +15,8 @@
       <tr *ngFor="let user of users">
         <td>{{ user.id }}</td>
         <td>
-          <a routerLink="{{ user.id }}">
-            {{ user.firstname }} {{ user.lastname }}</a
-          >
+          <!--TODO: This routerlink is giving off anti attribute errors during tests, find a fix-->
+          <a routerLink="{{ user.id }}">{{ user.firstname }} {{ user.lastname }}</a>
         </td>
         <td>{{ user.email }}</td>
         <td>{{ user.username }}</td>

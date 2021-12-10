@@ -9,7 +9,7 @@ import {CardService} from "../../../services/card.service";
   styleUrls: ['./card-detail.component.css']
 })
 export class CardDetailComponent implements OnInit {
-  card: cardModel | null = null;
+  card: cardModel | any;
   constructor(
     private cardService: CardService,
     public dialogRef: MatDialogRef<CardDetailComponent>,
@@ -17,7 +17,7 @@ export class CardDetailComponent implements OnInit {
   ) {  }
 
   ngOnInit(): void {
-    this.card = this.cardService.getCardById(Number(this.data.id))
+    this.card = this.cardService.getCardById(String(this.data.id)).subscribe(card => this.card = card)
   }
 
 }

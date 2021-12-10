@@ -12,13 +12,17 @@ export class CollectionListComponent implements OnInit {
   constructor(private collectionService: CollectionService) { }
 
   ngOnInit(): void {
-    this.collections = this.collectionService.getCollections();
+    this.collectionService.getCollections().subscribe(collection => {
+      for (let i = 0; i < collection.results.length; i++) {
+        this.collections.push(collection.results[i])
+      }
+    });
   }
 
   deleteRow(id: number, name: string){
     if(confirm("Are you sure to delete collection: " + name)) {
       for(let i = 0; i < this.collections.length; ++i){
-        if (this.collections[i].id === id) {
+        if (this.collections[i]._id === id) {
           this.collections.splice(i,1);
         }
       }
