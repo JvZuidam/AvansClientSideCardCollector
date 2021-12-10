@@ -2,7 +2,7 @@ import {setModel} from "./set.model";
 import {cardModel} from "./card.model";
 
 export class collectionModel {
-  id: number = 0;
+  _id: number = 0;
   userId: string = '';
   collectionName: string = '';
   collectionSetName: string = '';
@@ -13,7 +13,7 @@ export class collectionModel {
 
 
   constructor(id: number, userId: string, collectionName: string, collectionSetName: string, numberOfCards: number, cards: cardModel[]) {
-    this.id = id;
+    this._id = id;
     this.userId = userId;
     this.collectionName = collectionName;
     this.collectionSetName = collectionSetName;

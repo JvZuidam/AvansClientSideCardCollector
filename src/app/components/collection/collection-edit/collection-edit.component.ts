@@ -26,7 +26,7 @@ export class CollectionEditComponent implements OnInit {
 
       if (this.collectionId) {
         //Collection exists
-        this.collection = this.collectionService.getCollectionById(Number(this.collectionId))
+        this.collectionService.getCollectionById(String(this.collectionId)).subscribe()
         this.UpdatedCollection = this.collection;
       }
     });

@@ -2,12 +2,18 @@ import { Injectable } from '@angular/core';
 import {cardModel} from "../models/card.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
   readonly cards: cardModel[] = []
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+    })
+  };
 
   constructor(
     private http: HttpClient
@@ -22,13 +28,7 @@ export class CardService {
     console.log("getCardsBySetName aangeroepen");
     let cardArr:cardModel[] = [];
 
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-      })
-    };
-
-    this.http.get<any>(environment.apiString + "/card/" + setName, httpOptions).subscribe(data => {
+    this.http.get<any>(environment.apiString + "/card/" + setName, this.httpOptions).subscribe(data => {
       for (let i = 0; i < data.results.length; i++) {
         let card = new cardModel(
           Number(data.results[i].id),
@@ -48,8 +48,10 @@ export class CardService {
   }
 
   //TODO: Get the details of a card in a collection by their card Id
-  getCardById(id: number): cardModel {
+  getCardById(id: string) {
     console.log("getCardById aangeroepen");
-    return this.cards.filter((card) => card.id === id)[0];
+    console.log(id);
+    return this.http.get<any>(environment.apiString + "/card/detail/" + id, this.httpOptions).pipe(tap(_ => console.log(_)))
+    // return this.cards.filter((card) => card._id === id)[0];
   }
 }

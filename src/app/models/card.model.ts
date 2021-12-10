@@ -1,5 +1,5 @@
 export class cardModel {
-  id: number = 0
+  _id: number = 0
   name: string = '';
   type: string = '';
   desc: string = '';
@@ -28,7 +28,7 @@ export class cardModel {
 
 
   constructor(id: number, name: string, type: string, desc: string, race: string, cardSetName: string, cardSetCode: string, imageSmall: string, image: string) {
-    this.id = id;
+    this._id = id;
     this.name = name;
     this.type = type;
     this.desc = desc;

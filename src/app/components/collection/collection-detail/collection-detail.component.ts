@@ -16,7 +16,7 @@ import {CardDetailComponent} from "../../card/card-detail/card-detail.component"
 export class CollectionDetailComponent implements OnInit, OnDestroy {
   collectionId: string | null = null;
   cards: cardModel | null = null;
-  collection: collectionModel | null = null;
+  collection: collectionModel | any;
 
   destroy = new Subject();
   currentDialog: MatDialogRef<CardDetailComponent> | null = null;
@@ -31,9 +31,8 @@ export class CollectionDetailComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.collectionId = params.get('id');
-      this.collection = this.collectionService.getCollectionById(Number(this.collectionId));
     })
-
+    this.collection = this.collectionService.getCollectionById(String(this.collectionId)).subscribe(collection => this.collection = collection.results[0])
   }
 
   ngOnDestroy() {

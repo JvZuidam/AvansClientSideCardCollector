@@ -3,7 +3,6 @@ import {SetService} from "../../../services/set.service";
 import {CollectionService} from "../../../services/collection.service";
 import {collectionModel} from "../../../models/collection.model";
 import {CardService} from "../../../services/card.service";
-import {cardModel} from "../../../models/card.model";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -30,9 +29,7 @@ export class CollectionNewComponent implements OnInit {
 
   onSubmit(collectionName: string) {
     //Save the collection
-    this.collectionService.createNewCollection(
-      new collectionModel(999, '3', collectionName, this.setName, 600, this.cardService.getCardsBySetName(this.setName))
-    )
+    this.collectionService.createNewCollection(collectionName, this.setName).subscribe(collection => {})
     this.router.navigate(['..'], {relativeTo: this.route});
 
   }

@@ -3,24 +3,24 @@
     width: 1000px;">
 
 <!--TODO: Somehwere here testing goed wrong it can't detect name because its undefined or something-->
-  <h1>{{ card.name }}</h1>
-  <img src="{{ card.image }}" alt="Image is currently not available">
-  <p>Description: {{ card.desc }}</p>
-  <p>Set: {{ card.cardSetName }}</p>
-  <p>SetCode: {{ card.cardSetCode }}</p>
+  <h1>{{ card.results.name }}</h1>
+  <img src="{{ card.results.card_images[0].image_url }}" alt="Image is currently not available">
+  <p>Description: {{ card.results.desc }}</p>
+  <p>Set: {{ card.results.card_sets[0].set_name }}</p>
+  <p>SetCode: {{ card.results.card_sets[0].set_code }}</p>
 
 
-  <p *ngIf="card.level">Level: {{ card.level }}</p>
-  <p *ngIf="card.attribute">Attribute: {{ card.attribute }}</p>
-  <p *ngIf="card.linkVal">Link: {{ card.linkVal }}</p>
-  <p *ngIf="card.linkMarkers">LinkMarkers: {{ card.linkMarkers }}</p>
-  <p *ngIf="card.atk">Attack: {{ card.atk }}</p>
-  <p *ngIf="card.def">Defense: {{ card.def }}</p>
+  <p *ngIf="card.results.level">Level: {{ card.results.level }}</p>
+  <p *ngIf="card.results.attribute">Attribute: {{ card.results.attribute }}</p>
+  <p *ngIf="card.results.linkVal">Link: {{ card.results.linkVal }}</p>
+  <p *ngIf="card.results.linkMarkers">LinkMarkers: {{ card.results.linkMarkers }}</p>
+  <p *ngIf="card.results.atk">Attack: {{ card.results.atk }}</p>
+  <p *ngIf="card.results.def">Defense: {{ card.results.def }}</p>
 
-  <p>Race: {{ card.race }}</p>
-  <p *ngIf="card.archetype">Archetype: {{ card.archetype }}</p>
+  <p>Race: {{ card.results.race }}</p>
+  <p *ngIf="card.results.archetype">Archetype: {{ card.results.archetype }}</p>
 
-  <p>Obtained: {{ card.obtained }}</p>
+  <p>Obtained: {{ card.results.obtained }}</p>
 
 
 </div>

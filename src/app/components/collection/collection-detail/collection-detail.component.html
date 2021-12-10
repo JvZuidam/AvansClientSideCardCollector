@@ -9,9 +9,9 @@
     <p>Amount: {{ collection.numberOfCards }}</p>
     <p>Set Created On: {{ collection.creationDate }}</p>
     <p> Locked: {{collection.locked}}</p>
-      <div class="col-2" *ngFor="let a of collection.cards">
-        <a *ngIf="a.obtained" (click)="openCardDetail(a.id)"><img class="zoom" src="{{ a.imageSmall }}" alt=""></a>
-        <a id="wrapper" *ngIf="!a.obtained" (click)="openCardDetail(a.id)"><img id="myImage" class="zoom" src="{{ a.imageSmall }}" alt=""></a>
+      <div class="col-2" *ngFor="let card of collection.cards">
+        <a *ngIf="card.obtained" (click)="openCardDetail(card.id)"><img class="zoom" src="{{ card.card_images[0].image_url_small }}" alt=""></a>
+        <a id="wrapper" *ngIf="!card.obtained" (click)="openCardDetail(card.id)"><img id="myImage" class="zoom" src="{{ card.card_images[0].image_url_small }}" alt=""></a>
       </div>
 
   </div>
