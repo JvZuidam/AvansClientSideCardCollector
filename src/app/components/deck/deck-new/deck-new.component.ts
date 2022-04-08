@@ -45,7 +45,7 @@ export class DeckNewComponent implements OnInit {
   }
 
   onSubmit(deckName: string) {
-    this.deckService.createNewDeck("61b0a3c0bd8abed432fe8a08", deckName, this.mainDeck, this.extraDeck, this.sideDeck).subscribe()
+    this.deckService.createNewDeck(deckName, this.mainDeck, this.extraDeck, this.sideDeck).subscribe()
     this.router.navigate(['..'], {relativeTo: this.route});
   }
 }

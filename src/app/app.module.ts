@@ -32,10 +32,10 @@ import { DeckListComponent } from './components/deck/deck-list/deck-list.compone
 import { DeckDetailComponent } from './components/deck/deck-detail/deck-detail.component';
 import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.component';
 import { DeckNewComponent } from './components/deck/deck-new/deck-new.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from "@angular/common/http";
 import { TradeNewComponent } from './components/trade/trade-new/trade-new.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
-
+import {JWT_OPTIONS, JwtHelperService, JwtModule, JwtModuleOptions} from "@auth0/angular-jwt";
 
 @NgModule({
   declarations: [
@@ -68,6 +68,7 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     TradeNewComponent
   ],
   imports: [
+    JwtModule,
     DragDropModule,
     AppRoutingModule,
     BrowserModule,
@@ -76,8 +77,10 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     MatDialogModule,
     RouterModule,
     HttpClientModule
+
   ],
-  providers: [],
+  providers: [ { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

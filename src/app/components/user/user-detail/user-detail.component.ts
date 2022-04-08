@@ -10,7 +10,7 @@ import {UserService} from "../../../services/user.service";
 })
 export class UserDetailComponent implements OnInit {
   userId: string | null = null;
-  user: userModel | null = null;
+  user: userModel | any;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +22,7 @@ export class UserDetailComponent implements OnInit {
       //Get the id of the user from the url
       this.userId = params.get('id');
       //get user by id and dont forget to cast the params string to a number
-      this.user = this.userService.getUserById(Number(this.userId));
+      this.user = this.userService.getUserById().subscribe(user => this.user = user.results[0])
     });
   }
 

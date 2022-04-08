@@ -1,10 +1,19 @@
 import { Injectable } from '@angular/core';
 import {userModel} from "../models/user.model";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {environment} from "../../environments/environment";
+import {tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+    })
+  };
+
   readonly users: userModel[] = [
     {
       id: 0,
@@ -68,25 +77,35 @@ export class UserService {
     },
   ]
 
-  getUsers(): userModel[] {
+
+
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  getUsers() {
     console.log('getUsers aangeroepen');
-    return this.users;
+    return this.http.get<any>(environment.apiString + "/user", this.httpOptions).pipe(tap(result => console.log(result)))
   }
 
-  constructor() { }
-
-  getUserById(id: number): userModel {
+  getUserById() {
     console.log("getUserById aangeroepen");
-    return this.users.filter((user) => user.id === id)[0];
+    return this.http.get<any>(environment.apiString + "/user/" + localStorage.getItem("userid"), this.httpOptions).pipe(tap(result => console.log(result)))
   }
 
   deleteUserById(id: number) {
     console.log("deleteUser aangeroepen");
-    console.log("User is verwijderd");
+    return this.http.delete<any>(environment.apiString + "/user/" + localStorage.getItem("userid"), this.httpOptions).pipe(tap(result => console.log(result)))
   }
 
   createNewUser(user: userModel) {
     console.log("createNewUser aangeroepen");
-    this.users.push(user);
+    return this.http.post<any>(environment.apiString + "/new", {})
+  }
+
+  updateUser(firstName: string, lastName: string, email: string, username: string) {
+    console.log("userUpdate aangeroepen");
+    return this.http.put<any>(environment.apiString + "/user/" + localStorage.getItem("userid"), {firstName: firstName, lastName: lastName, email: email, username: username}, this.httpOptions)
+
   }
 }
