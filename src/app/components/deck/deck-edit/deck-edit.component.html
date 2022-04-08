@@ -1,1 +1,82 @@
-<p>deck-edit works!</p>
+<div class="container detail bg-light">
+  <div class="row">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">deck name</label>
+
+      <div class="col-sm-10">
+        <input type="text" name="deckName" placeholder="Deck name" class="form-control" required [(ngModel)]="deck.deckName"  #deckName="ngModel">
+        <div *ngIf="deckName.invalid && (deckName.dirty || deckName.touched)"
+             class="alert alert-danger">
+          <div *ngIf="deckName.errors?.['required']">
+            A name for your deck is required
+          </div>
+        </div>
+      </div>
+
+      <!--  Cardlist  -->
+      <h2>Cardlist</h2>
+      <div
+        cdkDropList
+        cdkDropListOrientation="horizontal"
+        #cardsAvailable="cdkDropList"
+        [cdkDropListData]="cardList"
+        [cdkDropListConnectedTo]="[cardsOfMainDeck, cardsOfExtraDeck, cardsOfSideDeck]"
+        class="example-list col-12"
+        (cdkDropListDropped)="drop($event)">
+
+        <div class="example-box" *ngFor="let item of cardList" cdkDrag><img [src]="item.imageSmall" [alt]="item.name">
+          <img *cdkDragPreview [src]="item.imageSmall" [alt]="item.name">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!--  MainDeck  -->
+      <h2>MainDeck</h2>
+      <div
+        cdkDropList
+        #cardsOfMainDeck="cdkDropList"
+        [cdkDropListData]="deck.mainDeck"
+        [cdkDropListConnectedTo]="[cardsAvailable, cardsOfExtraDeck, cardsOfSideDeck]"
+        class="example-list col-12"
+        (cdkDropListDropped)="drop($event)">
+
+        <div class="example-box" *ngFor="let item of deck.mainDeck" cdkDrag><img [src]="item.imageSmall" [alt]="item.name">
+          <img *cdkDragPreview [src]="item.imageSmall" [alt]="item.name">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!--  ExtraDeck  -->
+      <h2>ExtraDeck</h2>
+      <div
+        cdkDropList
+        #cardsOfExtraDeck="cdkDropList"
+        [cdkDropListData]="deck.extraDeck"
+        [cdkDropListConnectedTo]="[cardsAvailable, cardsOfMainDeck, cardsOfSideDeck]"
+        class="example-list col-12"
+        (cdkDropListDropped)="drop($event)">
+
+        <div class="example-box" *ngFor="let item of deck.extraDeck" cdkDrag><img [src]="item.imageSmall" [alt]="item.name">
+          <img *cdkDragPreview [src]="item.imageSmall" [alt]="item.name">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!--  SideDeck  -->
+      <h2>SideDeck</h2>
+      <div
+        cdkDropList
+        #cardsOfSideDeck="cdkDropList"
+        [cdkDropListData]="deck.sideDeck"
+        [cdkDropListConnectedTo]="[cardsAvailable, cardsOfMainDeck, cardsOfExtraDeck]"
+        class="example-list col-12"
+        (cdkDropListDropped)="drop($event)">
+
+        <div class="example-box" *ngFor="let item of deck.sideDeck" cdkDrag><img [src]="item.imageSmall" [alt]="item.name">
+          <img *cdkDragPreview [src]="item.imageSmall" [alt]="item.name">
+        </div>
+      </div>
+    </div>
+    <button [disabled]="(!deck.deckName)" type="submit" class="btn btn-primary" (click)="onSubmit(deck.deckName)">Update</button>
+  </div>
+</div>

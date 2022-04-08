@@ -34,6 +34,7 @@ import { DeckEditComponent } from './components/deck/deck-edit/deck-edit.compone
 import { DeckNewComponent } from './components/deck/deck-new/deck-new.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { TradeNewComponent } from './components/trade/trade-new/trade-new.component';
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { TradeNewComponent } from './components/trade/trade-new/trade-new.compon
     TradeNewComponent
   ],
   imports: [
+    DragDropModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,

@@ -1,1 +1,28 @@
-<p>deck-list works!</p>
+<div class="container list bg-light">
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary btn-sm float-right" role="button" routerLinkActive="active" routerLink="new">New</a>
+    </div>
+    <table class="table table-striped table-hover bg-light">
+      <thead>
+      <th>Id</th>
+      <th>deckName</th>
+      <th>NumberOfCards</th>
+      <th>Created</th>
+      <th>Locked</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let deck of decks">
+        <td>
+          <!--TODO: This routerlink is giving off anti attribute errors during tests, find a fix-->
+          <a routerLink="{{ deck._id }}">{{ deck._id }}</a>
+        </td>
+        <td>{{ deck.deckName }}</td>
+        <td>{{ deck.numberOfCards }}</td>
+        <td>{{ deck.creationDate }}</td>
+        <button class="btn-danger text-black" id="remove" (click)="deleteRow(deck._id, deck.deckName)">DELETE deck</button>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

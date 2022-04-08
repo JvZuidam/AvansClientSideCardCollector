@@ -21,6 +21,10 @@ export class CollectionService {
     private http: HttpClient,
   ) { }
 
+ createNewCollection(collectionName: string, setName: string) {
+    console.log("createNewCollection aangeroepen");
+    return this.http.post<any>(environment.apiString + "/collection/new", {userId: "61b0a3c0bd8abed432fe8a08", collectionName: collectionName, setName: setName})
+  }
 
   getCollections() {
     console.log("getCollections aangeroepen");
@@ -38,8 +42,19 @@ export class CollectionService {
     return this.http.get<any>(environment.apiString + "/collection/" + id, this.httpOptions).pipe(tap(_ => console.log(_)))
   }
 
-  createNewCollection(collectionName: string, setName: string) {
-    console.log("createNewCollection aangeroepen");
-    return this.http.post<any>(environment.apiString + "/collection/new", {userId: "61b0a3c0bd8abed432fe8a08", collectionName: collectionName, setName: setName})
+  deleteCollection(id: string, userId: string) {
+    console.log("deleteCollection aangeroepen");
+    return this.http.delete<any>(environment.apiString + "/collection/" + id, this.httpOptions).pipe(tap(_ => console.log(_)))
+  }
+
+  updateCollection(id: string, collectionName: string, locked: boolean) {
+    console.log("updateCollection aangeroepen");
+    return this.http.put<any>(environment.apiString + "/collection/" + id, {collectionName: collectionName, locked: locked}, this.httpOptions)
+  }
+
+  updateObtainedCard(collectionId: string, cardId: string, obtainedValue: boolean) {
+    console.log("updateObtainedCard aangeroepen");
+    return this.http.put<any>(environment.apiString + "/collection/card/" + collectionId + "/" + cardId, {obtainedValue: obtainedValue}, this.httpOptions)
+
   }
 }

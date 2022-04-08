@@ -21,6 +21,7 @@ export class CollectionListComponent implements OnInit {
 
   deleteRow(id: number, name: string){
     if(confirm("Are you sure to delete collection: " + name)) {
+      this.collectionService.deleteCollection(String(id), "").subscribe(deck => {})
       for(let i = 0; i < this.collections.length; ++i){
         if (this.collections[i]._id === id) {
           this.collections.splice(i,1);

@@ -50,8 +50,6 @@ export class CardService {
   //TODO: Get the details of a card in a collection by their card Id
   getCardById(id: string) {
     console.log("getCardById aangeroepen");
-    console.log(id);
-    return this.http.get<any>(environment.apiString + "/card/detail/" + id, this.httpOptions).pipe(tap(_ => console.log(_)))
-    // return this.cards.filter((card) => card._id === id)[0];
+    return this.http.get<any>(environment.apiString + "/card/detail/" + id, this.httpOptions).pipe(tap())
   }
 }

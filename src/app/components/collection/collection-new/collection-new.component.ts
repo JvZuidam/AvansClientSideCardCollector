@@ -29,7 +29,7 @@ export class CollectionNewComponent implements OnInit {
 
   onSubmit(collectionName: string) {
     //Save the collection
-    this.collectionService.createNewCollection(collectionName, this.setName).subscribe(collection => {})
+    this.collectionService.createNewCollection(collectionName, this.setName).subscribe()
     this.router.navigate(['..'], {relativeTo: this.route});
 
   }

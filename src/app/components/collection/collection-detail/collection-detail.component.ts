@@ -39,9 +39,9 @@ export class CollectionDetailComponent implements OnInit, OnDestroy {
     this.destroy.next(true);
   }
 
-  openCardDetail(id: number) {
-      this.currentDialog = this.matDialog.open(CardDetailComponent, {
-        data: { id: id }
+  openCardDetail(id: number, obtained: boolean) {
+    this.currentDialog = this.matDialog.open(CardDetailComponent, {
+        data: { id: id, collectionId: this.collectionId, obtained: obtained}
       });
       this.currentDialog.afterClosed().subscribe(result => {
         console.log("The dialog was closed");
