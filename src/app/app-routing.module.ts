@@ -16,29 +16,38 @@ import {DeckListComponent} from "./components/deck/deck-list/deck-list.component
 import {DeckNewComponent} from "./components/deck/deck-new/deck-new.component";
 import {DeckDetailComponent} from "./components/deck/deck-detail/deck-detail.component";
 import {DeckEditComponent} from "./components/deck/deck-edit/deck-edit.component";
+import {AuthGuardService} from "./auth/auth-guard.service";
+import {TradeListComponent} from "./components/trade/trade-list/trade-list.component";
+import {TradeNewComponent} from "./components/trade/trade-new/trade-new.component";
+import {TradeDetailComponent} from "./components/trade/trade-detail/trade-detail.component";
+import {TradeEditComponent} from "./components/trade/trade-edit/trade-edit.component";
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
   { path: 'about', component: AboutComponent },
 
-  { path: 'users', pathMatch: 'full', component: UserListComponent },
-  { path: 'users/new', pathMatch: 'full', component: UserNewComponent },
-  { path: 'users/:id', pathMatch: 'full', component: UserDetailComponent},
-  { path: 'users/:id/edit', pathMatch: 'full', component: UserEditComponent},
+  { path: 'users/new', pathMatch: 'full', component: UserNewComponent, canActivate: [AuthGuardService] },
+  { path: 'users/:id', pathMatch: 'full', component: UserDetailComponent, canActivate: [AuthGuardService]},
+  { path: 'users/:id/edit', pathMatch: 'full', component: UserEditComponent, canActivate: [AuthGuardService]},
 
-  { path: 'collections', pathMatch: 'full', component: CollectionListComponent},
-  { path: 'collections/new', pathMatch: 'full', component: CollectionNewComponent},
-  { path: 'collections/:id', pathMatch: 'full', component: CollectionDetailComponent},
-  { path: 'collections/:id/edit', pathMatch: 'full', component: CollectionEditComponent},
+  { path: 'collections', pathMatch: 'full', component: CollectionListComponent, canActivate: [AuthGuardService]},
+  { path: 'collections/new', pathMatch: 'full', component: CollectionNewComponent, canActivate: [AuthGuardService]},
+  { path: 'collections/:id', pathMatch: 'full', component: CollectionDetailComponent, canActivate: [AuthGuardService]},
+  { path: 'collections/:id/edit', pathMatch: 'full', component: CollectionEditComponent, canActivate: [AuthGuardService]},
 
-  { path: 'cards/:id', pathMatch: 'full', component: CardDetailComponent},
+  { path: 'cards/:id', pathMatch: 'full', component: CardDetailComponent, canActivate: [AuthGuardService]},
 
-  { path: 'decks', pathMatch: 'full', component: DeckListComponent},
-  { path: 'decks/new', pathMatch: 'full', component: DeckNewComponent},
-  { path: 'decks/:id', pathMatch: 'full', component: DeckDetailComponent},
-  { path: 'decks/:id/edit', pathMatch: 'full', component: DeckEditComponent},
+  { path: 'decks', pathMatch: 'full', component: DeckListComponent, canActivate: [AuthGuardService]},
+  { path: 'decks/new', pathMatch: 'full', component: DeckNewComponent, canActivate: [AuthGuardService]},
+  { path: 'decks/:id', pathMatch: 'full', component: DeckDetailComponent, canActivate: [AuthGuardService]},
+  { path: 'decks/:id/edit', pathMatch: 'full', component: DeckEditComponent, canActivate: [AuthGuardService]},
+
+  { path: 'trades', pathMatch: 'full', component: TradeListComponent, canActivate: [AuthGuardService]},
+  { path: 'trades/new', pathMatch: 'full', component: TradeNewComponent, canActivate: [AuthGuardService]},
+  { path: 'trades/:id', pathMatch: 'full', component: TradeDetailComponent, canActivate: [AuthGuardService]},
+  { path: 'trades/:id/edit', pathMatch: 'full', component: TradeEditComponent, canActivate: [AuthGuardService]},
 
 ];
 

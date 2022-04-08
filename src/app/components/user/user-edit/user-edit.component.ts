@@ -9,7 +9,7 @@ import {userModel} from "../../../models/user.model";
 })
 export class UserEditComponent implements OnInit {
   userId: string | null = null;
-  user: userModel | null = null;
+  user: userModel | any;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,14 +24,14 @@ export class UserEditComponent implements OnInit {
 
       if (this.userId) {
         //This user exists
-        this.user = this.userService.getUserById(Number(this.userId));
+        this.user = this.userService.getUserById().subscribe(user => this.user = user.results[0])
 
       }
     });
   }
 
-  onSubmit() {
-    console.log("User bewerking opslaan aangeroepen");
+  onSubmit(firstName: string, lastName: string, email: string, username: string) {
+    this.userService.updateUser(firstName, lastName, email, username).subscribe();
     this.router.navigate(['..'], {relativeTo: this.route});
   }
 }
