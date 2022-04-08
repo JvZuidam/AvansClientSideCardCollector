@@ -26,12 +26,12 @@ export class DeckService {
 
   getDecks() {
     console.log('getDecks aangeroepen');
-    return this.http.get<any>(environment.apiString + "/deck/" + localStorage.getItem("userid"), this.httpOptions).pipe(tap(_ => console.log(_)))
+    return this.http.get<any>(environment.apiString + "/deck/" + localStorage.getItem("userid"), this.httpOptions).pipe(tap(result => console.log(result)))
   }
 
   getDeckById(id: string) {
     console.log("getDeckById aangeroepen");
-    return this.http.get<any>(environment.apiString + "/deck/" + localStorage.getItem("userid") + "/" + id, this.httpOptions).pipe(tap(_ => console.log(_)))
+    return this.http.get<any>(environment.apiString + "/deck/" + localStorage.getItem("userid") + "/" + id, this.httpOptions).pipe(tap(result => console.log(result)))
   }
 
   createNewDeck(deckName: string, mainDeck: cardModel[], extraDeck: cardModel[], sideDeck: cardModel[]) {
@@ -39,9 +39,9 @@ export class DeckService {
     return this.http.post<any>(environment.apiString + "/deck/new", {userId: localStorage.getItem("userid"), deckName: deckName, mainDeck: mainDeck, extraDeck: extraDeck, sideDeck: sideDeck})
   }
 
-  deleteDeck(id: string, userId: string) {
+  deleteDeck(id: string) {
     console.log("deleteDeck aangeroepen");
-    return this.http.delete<any>(environment.apiString + "/deck/" + localStorage.getItem("userid") + "/" + id, this.httpOptions).pipe(tap( _ => console.log(_)))
+    return this.http.delete<any>(environment.apiString + "/deck/" + localStorage.getItem("userid") + "/" + id, this.httpOptions).pipe(tap( result => console.log(result)))
   }
 
   updateDeck(id: string, deckName: string, mainDeck: cardModel[], extraDeck: cardModel[], sideDeck: cardModel[]) {
