@@ -35,7 +35,8 @@ import { DeckNewComponent } from './components/deck/deck-new/deck-new.component'
 import { HttpClientModule} from "@angular/common/http";
 import { TradeNewComponent } from './components/trade/trade-new/trade-new.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
-import {JWT_OPTIONS, JwtHelperService, JwtModule, JwtModuleOptions} from "@auth0/angular-jwt";
+import {JWT_OPTIONS, JwtHelperService, JwtModule} from "@auth0/angular-jwt";
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {JWT_OPTIONS, JwtHelperService, JwtModule, JwtModuleOptions} from "@auth0
     DeckDetailComponent,
     DeckEditComponent,
     DeckNewComponent,
-    TradeNewComponent
+    TradeNewComponent,
+    RegisterComponent
   ],
   imports: [
     JwtModule,

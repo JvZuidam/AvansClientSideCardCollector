@@ -21,10 +21,12 @@ import {TradeListComponent} from "./components/trade/trade-list/trade-list.compo
 import {TradeNewComponent} from "./components/trade/trade-new/trade-new.component";
 import {TradeDetailComponent} from "./components/trade/trade-detail/trade-detail.component";
 import {TradeEditComponent} from "./components/trade/trade-edit/trade-edit.component";
+import {RegisterComponent} from "./components/register/register.component";
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
   { path: 'about', component: AboutComponent },
 
