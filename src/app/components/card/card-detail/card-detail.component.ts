@@ -37,9 +37,9 @@ export class CardDetailComponent implements OnInit {
   changeCheckBox(event: any, cardId: any) {
     this.collectionService.updateObtainedCard(this.collectionId, String(cardId), event.target.checked).subscribe()
     //This way of reloading works but it's kinda messy
-    // this.router.navigate(['/collections/' + this.collectionId])
-    //   .then(() => {
-    //     window.location.reload();
-    //   });
+    this.router.navigate(['/collections/' + this.collectionId])
+      .then(() => {
+        window.location.reload();
+      });
   }
 }

@@ -22,7 +22,7 @@ export class UserNewComponent implements OnInit {
 
   onSubmit(firstName: string, lastName: string, userEmail: string, username: string, password: string) {
 
-  this.userService.createNewUser(new userModel(firstName, lastName, username, userEmail, password));
+  // this.userService.createNewUser(new userModel(firstName, lastName, username, userEmail, password));
   this.router.navigate(['..'], {relativeTo: this.route});
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../auth/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {userModel} from "../../models/user.model";
 
 @Component({
   selector: 'app-login',
@@ -8,8 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-
+  user: userModel = new userModel("","","","","")
   constructor(
   private authService: AuthService,
   private route: ActivatedRoute,
@@ -18,14 +18,25 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     //TODO: Remove this later after debugging
-    console.log(this.authService.isAuthenticated());
-    console.log(localStorage.getItem("token"));
+    // console.log(this.authService.isAuthenticated());
+    // console.log(localStorage.getItem("token"));
+    // console.log(localStorage.getItem("userid"));
   }
 
-  onSubmit() {
-    this.authService.login("jimvanZuidam@hotmail.nl", "admin123").subscribe()
-    this.router.navigate(['/dashboard'])
 
+  onSubmit(email: string, password: string) {
+    this.authService.login(email, password).subscribe()
+    this.LoggedInRedicrect()
+  }
 
+  redirect() {
+    this.router.navigate(['/register'])
+  }
+
+  LoggedInRedicrect(){
+    setTimeout(() => {
+        this.router.navigate(['/dashboard'])
+      }
+      , 2000);
   }
 }
