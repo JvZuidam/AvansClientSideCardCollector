@@ -29,6 +29,26 @@ export class DeckService {
     return this.http.get<any>(environment.apiString + "/deck/" + localStorage.getItem("userid"), this.httpOptions).pipe(tap(result => console.log(result)))
   }
 
+  getDecksForTrade(id: string): deckModel[] {
+    console.log('getDecksForTrade aangeroepen');
+    let deckArr: deckModel[] = [];
+
+    this.http.get<any>(environment.apiString + "/deck/" + id, this.httpOptions).subscribe(data => {
+      for (let i = 0; i < data.results.length; i++) {
+      let deck = new deckModel(
+        Number(data.results[i].id),
+        data.results[i].userId,
+        data.results[i].deckName,
+        data.results[i].numberOfCards,
+        data.results[i].mainDeck,
+        data.results[i].extraDeck,
+        data.results[i].sideDeck)
+        deckArr.push(deck)
+      }
+    })
+    return deckArr;
+  }
+
   getDeckById(id: string) {
     console.log("getDeckById aangeroepen");
     return this.http.get<any>(environment.apiString + "/deck/" + localStorage.getItem("userid") + "/" + id, this.httpOptions).pipe(tap(result => console.log(result)))

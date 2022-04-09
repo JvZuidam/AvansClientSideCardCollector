@@ -16,12 +16,8 @@ export class TradeDetailComponent implements OnInit {
   tradeId: string | null = null;
   trade: tradeModel | any;
 
-  info : any;
 
-  deckToTrade: deckModel | any
-  deckToReceive: deckModel | any;
-  cardToTrade: cardModel | any
-  cardToReceive: cardModel | any;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -34,7 +30,7 @@ export class TradeDetailComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.tradeId = params.get('id')
     })
-    this.trade = this.tradeService.getTradeById(String(this.tradeId)).subscribe(trade => this.info = trade.results[0])
+    this.trade = this.tradeService.getTradeById(String(this.tradeId)).subscribe(trade => this.trade = trade.results[0])
   }
 
 }

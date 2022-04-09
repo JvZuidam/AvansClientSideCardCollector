@@ -31,14 +31,23 @@ export class TradeService {
     return this.http.get<any>(environment.apiString + "/trade/" + localStorage.getItem("userid") + "/" + id, this.httpOptions).pipe(tap(result => console.log(result)))
   }
 
-  updateTrade(id: string) {
+  updateTrade(id: string, cardTradeName: string, cardTradeId: string, cardReceiveName: string, cardReceiveId: string) {
     console.log("updateTrade aangeroepen");
-    return this.http.put<any>(environment.apiString + "/trade/" + localStorage.getItem("userid") + "/" + id, {}, this.httpOptions)
+    return this.http.put<any>(environment.apiString + "/trade/" + localStorage.getItem("userid") + "/" + id, {cardToTrade: cardTradeId, cardTradeName: cardTradeName, cardToReceive: cardReceiveId, cardReceiveName: cardReceiveName}, this.httpOptions)
   }
 
-  createTrade() {
+  createTrade(traderName: string, tradeeId: string, tradeeName: string, cardTradeName: string, cardTradeId: string, cardReceiveName: string, cardReceiveId: string) {
     console.log("createTrade aangeroepen");
-    return this.http.post<any>(environment.apiString + "/trade/" + localStorage.getItem("userid"), {} )
+    return this.http.post<any>(environment.apiString + "/trade/new", {
+      traderId: localStorage.getItem("userid"),
+      traderName: traderName,
+      tradeeId: tradeeId,
+      tradeeName: tradeeName,
+      cardToTrade: cardTradeId,
+      cardTradeName: cardTradeName,
+      cardToReceive: cardReceiveId,
+      cardReceiveName: cardReceiveName
+    }, this.httpOptions)
   }
 
   deleteTrade(id: string) {

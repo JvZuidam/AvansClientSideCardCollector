@@ -4,7 +4,7 @@ import {CardService} from "./card.service";
 import {cardModel} from "../models/card.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
-import {tap} from "rxjs";
+import {map, Observable, tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
