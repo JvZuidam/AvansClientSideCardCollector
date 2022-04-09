@@ -4,12 +4,12 @@
       <a class="btn btn-primary btn-sm float-right" href="#" role="button" routerLink="edit">Edit</a>
     </div>
 
-    <p>Trader: {{trade.trader}}</p>
-    <p>Tradee: {{trade.tradee}}</p>
+    <p>Trader: {{trade.traderName}}</p>
+    <p>Tradee: {{trade.tradeeName}}</p>
     <p *ngIf="trade.cardToTrade">Card to trade: {{trade.cardToTrade}}</p>
     <p *ngIf="trade.cardToReceive">Card to receive: {{trade.cardToReceive}}</p>
-    <p *ngIf="trade.deckToTrade">Deck to trade: {{trade.deckToTrade}}</p>
-    <p *ngIf="trade.deckToReceive">Deck to receive: {{trade.deckToReceive}}</p>
+    <p *ngIf="trade.deckTradeName">Deck to trade: {{trade.deckTradeName}}</p>
+    <p *ngIf="trade.deckReceiveName">Deck to receive: {{trade.deckReceiveName}}</p>
   </div>
 </div>
 
