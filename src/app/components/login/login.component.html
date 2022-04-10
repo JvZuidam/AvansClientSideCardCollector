@@ -5,19 +5,34 @@
         <form id="login-form" class="form" action="" method="post">
           <h3 class="text-center text-info">Login</h3>
           <div class="form-group">
-            <label for="username" class="text-info">Username:</label><br>
-            <input type="text" name="username" id="username" class="form-control">
+            <label class="text-info">Email:</label><br>
+            <input type="text" name="email" placeholder="email" class="form-control" required email [(ngModel)]="user.email"  #email="ngModel">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+              <div *ngIf="email.errors?.['required']">
+                An email is required
+              </div>
+              <div *ngIf="email.errors?.['email']">
+                This is not a valid email
+              </div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="password" class="text-info">Password:</label><br>
-            <input type="text" name="password" id="password" class="form-control">
+            <label class="text-info">Password:</label><br>
+            <input type="text" name="password" placeholder="password" class="form-control" required [(ngModel)]="user.password"  #password="ngModel">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+              <div *ngIf="password.errors?.['required']">
+                A password is required
+              </div>
+            </div>
           </div>
+          <br>
           <div class="form-group">
-            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-            <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+            <button [disabled]="(!user.email || !user.password)" type="submit" class="btn btn-primary" (click)="onSubmit(user.email, user.password)">Login</button>
           </div>
+          <br>
           <div id="register-link" class="text-right">
-            <a href="#" class="text-info">Register here</a>
+            <p>Don't have an account yet?<br>
+              <button class="btn btn-primary btn-sm float-right" role="button" (click)="redirect()">Register here</button></p>
           </div>
         </form>
       </div>

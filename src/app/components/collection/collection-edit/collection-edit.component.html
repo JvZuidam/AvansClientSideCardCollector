@@ -29,6 +29,7 @@
                 </div>
               </div>
             </div>
+            <button class="btn btn-primary" (click)="back()">Back</button>
             <button [disabled]="(!collection.collectionName || !optionSelected)" type="submit" class="btn btn-primary" (click)="onSubmit(collection.collectionName)">Update</button>
           </div>
         </fieldset>

@@ -1,1 +1,15 @@
-<p>trade-detail works!</p>
+<div class="container detail bg-light">
+  <div class="row">
+    <div class="col-4">
+      <a class="btn btn-primary btn-sm float-right" href="#" role="button" routerLink="edit">Edit</a>
+    </div>
+
+    <p>Trader: {{trade.traderName}}</p>
+    <p>Tradee: {{trade.tradeeName}}</p>
+    <p *ngIf="trade.cardToTrade">Card to trade: {{trade.cardToTrade}}</p>
+    <p *ngIf="trade.cardToReceive">Card to receive: {{trade.cardToReceive}}</p>
+    <p *ngIf="trade.deckTradeName">Deck to trade: {{trade.deckTradeName}}</p>
+    <p *ngIf="trade.deckReceiveName">Deck to receive: {{trade.deckReceiveName}}</p>
+  </div>
+</div>
+

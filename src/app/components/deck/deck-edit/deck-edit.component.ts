@@ -58,4 +58,7 @@ export class DeckEditComponent implements OnInit {
     this.router.navigate(['..'], {relativeTo: this.route});
   }
 
+  back() {
+    this.router.navigate(['..'], {relativeTo: this.route})
+  }
 }

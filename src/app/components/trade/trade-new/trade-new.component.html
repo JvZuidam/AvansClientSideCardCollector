@@ -1,1 +1,50 @@
-<p>trade-new works!</p>
+<div class="container bg-light">
+  <div class="row">
+    <div class="col-md4 col-md-offset-4">
+      <form role="form" class="form-horizontal">
+        <fieldset>
+          <div class="form-group">
+
+            <label class="col-sm-5 control-label">Select a user to trade with</label>
+            <div class="col-10">
+              <select [(ngModel)]="users" (ngModelChange)="onChangeUser($event)" [ngModelOptions]="{standalone: true}" required #user="ngModel">
+                <option *ngFor="let user of users" [ngValue]="user" > {{user.username}}</option>
+              </select>
+              <div *ngIf="user.invalid && (user.dirty || user.touched)" class="alert alert-danger">
+                <div *ngIf="user.errors?.['required']">
+                  a user to trade with is required
+                </div>
+              </div>
+            </div>
+
+            <label class="col-sm-5 control-label">Choose a card you have</label>
+            <div class="col-10">
+              <select [(ngModel)]="ownCards" (ngModelChange)="onChangeOwnCard($event)" [ngModelOptions]="{standalone: true}" required #ownCard="ngModel">
+                <option *ngFor="let ownCard of ownCards" [ngValue]="ownCard" > {{ownCard.name}}</option>
+              </select>
+              <div *ngIf="ownCard.invalid && (ownCard.dirty || ownCard.touched)" class="alert alert-danger">
+                <div *ngIf="ownCard.errors?.['required']">
+                  A card to trade is required
+                </div>
+              </div>
+            </div>
+
+            <label class="col-sm-5 control-label">Choose a card another user has</label>
+            <div class="col-10">
+              <select [(ngModel)]="otherCards" (ngModelChange)="onChangeOtherCard($event)" [ngModelOptions]="{standalone: true}" required #otherCard="ngModel">
+                <option *ngFor="let otherCard of otherCards" [ngValue]="otherCard" > {{otherCard.name}}</option>
+              </select>
+              <div *ngIf="otherCard.invalid && (otherCard.dirty || otherCard.touched)" class="alert alert-danger">
+                <div *ngIf="otherCard.errors?.['required']">
+                  A card to receive is required
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button [disabled]="(!users || !ownCards || !otherCards)" type="submit" class="btn btn-primary" (click)="onSubmit()">Create</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

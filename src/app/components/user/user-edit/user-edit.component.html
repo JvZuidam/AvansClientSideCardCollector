@@ -7,13 +7,13 @@
           <div class="form-group">
             <label class="col-sm-10 control-label">First name</label>
             <div class="col-sm-10">
-              <input type="text" name="firstname" value="{{user.firstname}}" placeholder="name" class="form-control" required minlength="2" [(ngModel)]="user.firstname" #firstname="ngModel">
-              <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+              <input type="text" name="firstName" value="{{user.firstName}}" placeholder="name" class="form-control" required minlength="2" [(ngModel)]="user.firstName" #firstName="ngModel">
+              <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
                    class="alert alert-danger">
-                <div *ngIf="firstname.errors?.['required']">
+                <div *ngIf="firstName.errors?.['required']">
                   Your first name is required.
                 </div>
-                <div *ngIf="firstname.errors?.['minlength']">
+                <div *ngIf="firstName.errors?.['minlength']">
                   your first name must be at least 2 characters long.
                 </div>
               </div>
@@ -22,13 +22,13 @@
           <div class="form-group">
             <label class="col-sm-10 control-label">Last name</label>
             <div class="col-sm-10">
-              <input type="text" name="lastname" value="{{user.lastname}}" placeholder="Lastname" class="form-control" required minlength="3" [(ngModel)]="user.lastname" #lastname="ngModel">
-              <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+              <input type="text" name="lastName" value="{{user.lastName}}" placeholder="lastName" class="form-control" required minlength="3" [(ngModel)]="user.lastName" #lastName="ngModel">
+              <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
                    class="alert alert-danger">
-                <div *ngIf="lastname.errors?.['required']">
+                <div *ngIf="lastName.errors?.['required']">
                   Your last name is required.
                 </div>
-                <div *ngIf="lastname.errors?.['minlength']">
+                <div *ngIf="lastName.errors?.['minlength']">
                   Your last name must be at least 4 characters long.
                 </div>
               </div>
@@ -65,7 +65,7 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <div class="pull-right">
-                <button  type="submit" class="btn btn-primary" style="margin: 4px;" (click)="onSubmit()">Update</button>
+                <button  type="submit" class="btn btn-primary" style="margin: 4px;" (click)="onSubmit(user.firstName, user.lastName, user.email, user.username)">Update</button>
                 <button class="btn btn-default" routerLink="..">cancel</button>
               </div>
             </div>

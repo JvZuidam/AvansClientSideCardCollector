@@ -40,4 +40,8 @@ export class CollectionEditComponent implements OnInit {
     console.log(newValue);
     this.locked = newValue;
   }
+
+  back() {
+    this.router.navigate(['..'], {relativeTo: this.route})
+  }
 }
