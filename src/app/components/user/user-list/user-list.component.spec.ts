@@ -59,7 +59,6 @@
 //
 //   it('should have userModel[] from UserService', () => {
 //     expect(component.users).toEqual(usersData)
-//     console.log("userService getUsers called in Usercomponent");
 //   })
 // });
 //

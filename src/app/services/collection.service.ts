@@ -28,7 +28,6 @@ export class CollectionService {
 
   getCollections() {
     console.log("getCollections aangeroepen");
-    console.log(localStorage.getItem("userid"));
     return this.http.get<any>(environment.apiString + "/collection/" + localStorage.getItem("userid"), this.httpOptions).pipe(tap(result => console.log(result)))
   }
 
