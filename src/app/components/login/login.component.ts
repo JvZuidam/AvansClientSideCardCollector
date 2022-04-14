@@ -17,10 +17,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //TODO: Remove this later after debugging
-    // console.log(this.authService.isAuthenticated());
-    // console.log(localStorage.getItem("token"));
-    // console.log(localStorage.getItem("userid"));
+
   }
 
 

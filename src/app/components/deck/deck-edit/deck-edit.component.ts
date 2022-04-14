@@ -52,7 +52,6 @@ export class DeckEditComponent implements OnInit {
   }
 
   onSubmit(deckName: string) {
-    console.log(deckName);
     console.log("Deck bewerkingen opslaan aangeroepen");
     this.deckService.updateDeck(this.deck._id, deckName, this.deck.mainDeck, this.deck.extraDeck, this.deck.sideDeck).subscribe();
     this.router.navigate(['..'], {relativeTo: this.route});
